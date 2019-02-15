@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="go语言学习笔记">
+<meta name="keywords" content="学习笔记,golang">
+<meta property="og:type" content="article">
+<meta property="og:title" content="go语言笔记">
+<meta property="og:url" content="https://ww2000e.gitee.io/2018/11/12/golang-note/index.html">
+<meta property="og:site_name" content="ww2000e的手账">
+<meta property="og:description" content="go语言学习笔记">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-11T13:19:56.292Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="go语言笔记">
+<meta name="twitter:description" content="go语言学习笔记">
+
+
+
+
+
+
+  <link rel="canonical" href="https://ww2000e.gitee.io/2018/11/12/golang-note/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>go语言笔记 | ww2000e的手账</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ww2000e的手账</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">subbbbbbbbbbbb</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-todo">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/Todo/" rel="section"><i class="menu-item-icon fa fa-fw fa-check-square"></i> <br>Todo</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-开源杂烩">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/opensource-collection/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>开源杂烩</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-hexo-cheatsheet">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/Hexo-Cheatsheet/" rel="section"><i class="menu-item-icon fa fa-fw fa-blind"></i> <br>HEXO Cheatsheet</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-vim-cheatsheet">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/vim-cheatsheet/" rel="section"><i class="menu-item-icon fa fa-fw fa-blind"></i> <br>Vim Cheatsheet</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-王摸摸">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/王摸摸/" rel="section"><i class="menu-item-icon fa fa-fw fa-bomb"></i> <br>王摸摸</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ww2000e.gitee.io/2018/11/12/golang-note/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ww2000e">
+      <meta itemprop="description" content="拖延症患者自救工具">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ww2000e的手账">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">go语言笔记
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-12 14:46:09" itemprop="dateCreated datePublished" datetime="2018-11-12T14:46:09+08:00">2018-11-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-11 21:19:56" itemprop="dateModified" datetime="2019-01-11T21:19:56+08:00">2019-01-11</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">5.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">5 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="go语言学习笔记"><a href="#go语言学习笔记" class="headerlink" title="go语言学习笔记"></a>go语言学习笔记</h2><a id="more"></a>
+<h3 id="数组，切片，映射"><a href="#数组，切片，映射" class="headerlink" title="数组，切片，映射"></a>数组，切片，映射</h3><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><ul>
+<li>数组是一个长度固定的数据类型，用于存储一段具有相同的类型的元素的连续块。数组存储的类型可以是内置类型，如整型或者字符串，也可以是某种结构类型</li>
+<li>数组元素初始化为0</li>
+<li><p>快速创建并初始化 </p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array := [<span class="number">5</span>]<span class="keyword">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>“…” 替代初始化: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array := [...]int&#123;1,2,3,4,5&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按索引修改数组: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array[2] = 35</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>整型指针初始化索引: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array := [5]*int&#123;0: new(int), 1: new(int)&#125; ，为索引0赋值*array[0] = 10</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>同样类型数组可以直接赋值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">array2 := [5]string&#123;&quot;Red&quot;, &quot;Blue&quot;, &quot;Green&quot;, &quot;Yellow&quot;, &quot;Pink&quot;&#125;</span><br><span class="line">array1 = array2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不同类型数组不可以赋值</p>
+</li>
+<li><p>指针数组赋值给另一个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var array1 [3]*string</span><br><span class="line">array2 := [3]*string&#123;new(string), new(string), new(string)&#125;</span><br><span class="line">*array2[0] = &quot;Red&quot;</span><br><span class="line">*array2[1] = &quot;Blue&quot;</span><br><span class="line">*array2[2] = &quot;Green&quot;</span><br><span class="line">array1 = array2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多维数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 声明一个二维整型数组，两个维度分别存储 4 个元素和 2 个元素</span><br><span class="line">var array [4][2]int</span><br><span class="line">// 使用数组字面量来声明并初始化一个二维整型数组</span><br><span class="line">array := [4][2]int&#123;&#123;10, 11&#125;, &#123;20, 21&#125;, &#123;30, 31&#125;, &#123;40, 41&#125;&#125;</span><br><span class="line">// 声明并初始化外层数组中索引为 1 个和 3 的元素</span><br><span class="line">array := [4][2]int&#123;1: &#123;20, 21&#125;, 3: &#123;40, 41&#125;&#125;</span><br><span class="line">// 声明并初始化外层数组和内层数组的单个元素</span><br><span class="line">array := [4][2]int&#123;1: &#123;0: 20&#125;, 3: &#123;1: 41&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数间传递数组</p>
+</li>
+<li>函数间传递开销很大。每次函数调用都会分配数组大小的内存。</li>
+<li>使用指针在函数间传递大数组，只需要分配指针内存就可以。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 分配一个需要 8 MB 的数组</span><br><span class="line">var array [1e6]int</span><br><span class="line">// 将数组的地址传递给函数 foo</span><br><span class="line">foo(&amp;array)</span><br><span class="line">// 函数 foo 接受一个指向 100 万个整型值的数组的指针</span><br><span class="line">func foo(array *[1e6]int) &#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h4><ul>
+<li>片是一种数据结构,这种数据结构便于使用和管理数据集合。切片是围绕动态数组的概念<br>构建的，可以按需自动增长和缩小。切片的动态增长是通过内置函数 append 来实现的。这个函<br>数可以快速且高效地增长切片。还可以通过对切片再次切片来缩小一个切片的大小。因为切片的<br>底层内存也是在连续块中分配的，所以切片还能获得索引、迭代以及为垃圾回收优化的好处</li>
+<li>切片是很小对象，对底层抽象。切片包括指针、长度、容量。</li>
+<li><p>一种创建方法是用make</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 字符串切片,其长度和容量都是 5 个元素</span><br><span class="line">slice := make([]string, 5)</span><br><span class="line">// 整型切片，其长度为 3 个元素，容量为 5 个元素</span><br><span class="line">slice := make([]int, 3, 5)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过切片字面量来声明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 创建字符串切片</span><br><span class="line">// 其长度和容量都是 5 个元素</span><br><span class="line">slice := []string&#123;&quot;Red&quot;, &quot;Blue&quot;, &quot;Green&quot;, &quot;Yellow&quot;, &quot;Pink&quot;&#125;</span><br><span class="line">// 创建一个整型切片</span><br><span class="line">// 其长度和容量都是 3 个元素</span><br><span class="line">slice := []int&#123;10, 20, 30&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用索引声明切片</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 创建字符串切片</span><br><span class="line">// 使用空字符串初始化第 100 个元素</span><br><span class="line">slice := []string&#123;99: &quot;&quot;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>声明数组和声明切片的不同</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 创建有 3 个元素的整型数组</span><br><span class="line">array := [3]int&#123;10, 20, 30&#125;</span><br><span class="line">// 创建长度和容量都是 3 的整型切片</span><br><span class="line">slice := []int&#123;10, 20, 30&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>nil和空切片</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 创建 nil 整型切片。 指针nil，长度0，容量0</span><br><span class="line">var slice []int</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>声明空切片。地址指针，长度0，容量0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 使用 make 创建空的整型切片</span><br><span class="line">slice := make([]int, 0)</span><br><span class="line">// 使用切片字面量创建空的整型切片</span><br><span class="line">slice := []int&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用切片创建切片</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 创建一个整型切片</span><br><span class="line">// 其长度和容量都是 5 个元素</span><br><span class="line">slice := []int&#123;10, 20, 30, 40, 50&#125;</span><br><span class="line"></span><br><span class="line">// 创建一个新切片</span><br><span class="line">// 其长度为 2 个元素，容量为 4 个元素</span><br><span class="line">newSlice := slice[1:3]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>计算长度和容量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n = slice[i: j]</span><br><span class="line">长度: j - i</span><br><span class="line">容量: k - i</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3个索引的切片</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// slice[i:j:k]</span><br><span class="line">// 长度: j – i</span><br><span class="line">// 容量: k – i</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切片增长</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 创建一个整型切片</span><br><span class="line">// 其长度和容量都是 5 个元素</span><br><span class="line">slice := []int&#123;10, 20, 30, 40, 50&#125;</span><br><span class="line">// 创建一个新切片</span><br><span class="line">// 其长度为 2 个元素，容量为 4 个元素</span><br><span class="line">newSlice := slice[1:3]</span><br><span class="line">// 使用原有的容量来分配一个新元素</span><br><span class="line">// 将新元素赋值为 60</span><br><span class="line">newSlice = append(newSlice, 60)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>迭代切片</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">slice := []int&#123;10, 20, 30, 40&#125;</span><br><span class="line">// 迭代每一个元素，并显示其值</span><br><span class="line">for index, value := range slice &#123;</span><br><span class="line">	fmt.Printf(&quot;Index: %d Value: %d\n&quot;, index, value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>range返回两个值,每个元素的副本，而不是返回该元素</p>
+</li>
+<li>要想获取每个元素地址，可以使用切片变量和索引值</li>
+<li>_可以替代索引值</li>
+<li><p>内置函数len返回切片长度。cap返回切片容量。</p>
+</li>
+<li><p>函数间可以直接传递切片，切片尺寸很小，复制成本低。</p>
+</li>
+</ul>
+<h4 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h4><ul>
+<li>映射是一种数据结构，存储一系列无序键值对。</li>
+<li>映射可以快速检索数据</li>
+<li>映射是一个无序集合</li>
+<li><p>可以使用make创建映射</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 创建一个映射，键的类型是 string，值的类型是 int</span><br><span class="line">dict := make(map[string]int)</span><br><span class="line">// 创建一个映射，键和值的类型都是 string</span><br><span class="line">// 使用两个键值对初始化映射</span><br><span class="line">dict := map[string]string&#123;&quot;Red&quot;: &quot;#da1337&quot;, &quot;Orange&quot;: &quot;#e95a22&quot;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用映射</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 创建一个空映射，用来存储颜色以及颜色对应的十六进制代码</span><br><span class="line">colors := map[string]string&#123;&#125;</span><br><span class="line">// 将 Red 的代码加入到映射</span><br><span class="line">colors[&quot;Red&quot;] = &quot;#da1337&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从映射获取值并判断键是否存在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 获取键 Blue 对应的值</span><br><span class="line">value, exists := colors[&quot;Blue&quot;]</span><br><span class="line">// 这个键存在吗？</span><br><span class="line">if exists &#123;</span><br><span class="line">	fmt.Println(value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从映射获取值，并通过该值判断键是否存在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 获取键 Blue 对应的值</span><br><span class="line">value := colors[&quot;Blue&quot;]</span><br><span class="line">// 这个键存在吗？</span><br><span class="line">if value != &quot;&quot; &#123;</span><br><span class="line">	fmt.Println(value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>range迭代映射</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 创建一个映射，存储颜色以及颜色对应的十六进制代码</span><br><span class="line">colors := map[string]string&#123;</span><br><span class="line">	&quot;AliceBlue&quot;: &quot;#f0f8ff&quot;,</span><br><span class="line">	&quot;Coral&quot;: &quot;#ff7F50&quot;,</span><br><span class="line">	&quot;DarkGray&quot;: &quot;#a9a9a9&quot;,</span><br><span class="line">	&quot;ForestGreen&quot;: &quot;#228b22&quot;,</span><br><span class="line">&#125;</span><br><span class="line">// 显示映射里的所有颜色</span><br><span class="line">for key, value := range colors &#123;</span><br><span class="line">	fmt.Printf(&quot;Key: %s Value: %s\n&quot;, key, value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从映射中删除一项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete(aaa, bbb) // 只能用在映射存储的值都是非零值的情况</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数间传递映射</p>
+</li>
+<li>函数间传递映射并不会制造出映射副本。传递后修改都是对本映射修改</li>
+</ul>
+<h3 id="类型系统"><a href="#类型系统" class="headerlink" title="类型系统"></a>类型系统</h3><h4 id="用户定义类型"><a href="#用户定义类型" class="headerlink" title="用户定义类型"></a>用户定义类型</h4><ul>
+<li>go是静态类型编程语言。需要指明每个值类型。</li>
+<li>值有个信息：内存大小，类型</li>
+<li><p>关键字type struct</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// user 在程序里定义一个用户类型</span><br><span class="line">type user struct &#123;</span><br><span class="line">	name string</span><br><span class="line">	email string</span><br><span class="line">	ext int</span><br><span class="line">	privileged bool</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用结构类型声明变量，初始化为0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var bill user</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用结构字面量来声明一个结构类型的变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lisa := user&#123;</span><br><span class="line">	name: &quot;Lisa&quot;,</span><br><span class="line">	email: &quot;lisa@email.com&quot;,</span><br><span class="line">	ext: 123,</span><br><span class="line">	privileged: true,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用结构字面量创建结构类型的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">user&#123;</span><br><span class="line">	name: &quot;Lisa&quot;,</span><br><span class="line">	email: &quot;lisa@email.com&quot;,</span><br><span class="line">	ext: 123,</span><br><span class="line">	privileged: true,</span><br><span class="line">&#125;</span><br><span class="line">//结构字面量可以对结构类型采用两种形式</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>基于已有类型声明一个新类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type Duration int64</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给不同类型的变量赋值会产生编译错误</p>
+</li>
+</ul>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<li>方法能给用户定义的类型添加新的行为</li>
+<li><p>关键字 func 和函数名之间的参数被称作接收者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// user 在程序里定义一个用户类型</span><br><span class="line">type user struct &#123;</span><br><span class="line">	name string</span><br><span class="line">	email string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// notify 使用值接收者实现了一个方法</span><br><span class="line">func (u user) notify() &#123;</span><br><span class="line">	fmt.Printf(&quot;Sending User Email To %s&lt;%s&gt;\n&quot;,u.name,u.email)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用值接受者声明一个方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">func (u user) notify() &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bill := user&#123;&quot;Bill&quot;, &quot;bill@email.com&quot;&#125;</span><br><span class="line">bill.notify()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="类型本质"><a href="#类型本质" class="headerlink" title="类型本质"></a>类型本质</h4><h5 id="内置类型"><a href="#内置类型" class="headerlink" title="内置类型"></a>内置类型</h5><ul>
+<li>内置类型是由语言提供一组类型。如数值，字符串，布尔。</li>
+</ul>
+<h5 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h5><ul>
+<li>切片，映射，通道，接口，函数类型</li>
+<li>以上类型创建变量称作：标头值</li>
+</ul>
+<h5 id="结构类型"><a href="#结构类型" class="headerlink" title="结构类型"></a>结构类型</h5><ul>
+<li>结构类型可以描述一组数据值。</li>
+</ul>
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><ul>
+<li>多态是指代码可以根据类型的具体实现采取不同行为的能力</li>
+<li>接口是用来定义行为的类型</li>
+</ul>
+<h4 id="嵌入类型"><a href="#嵌入类型" class="headerlink" title="嵌入类型"></a>嵌入类型</h4><h4 id="公开或未公开标识符"><a href="#公开或未公开标识符" class="headerlink" title="公开或未公开标识符"></a>公开或未公开标识符</h4><div class="note info">
+            <p>参考：<br>    《go语言实战》</p>
+          </div>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/golang/" rel="tag"># golang</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/04/cpp-note/" rel="next" title="c++学习笔记">
+                <i class="fa fa-chevron-left"></i> c++学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/17/ubuntu-desktop-note/" rel="prev" title="ubuntu日常使用记录">
+                ubuntu日常使用记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ww2000e</p>
+              <p class="site-description motion-element" itemprop="description">拖延症患者自救工具</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#go语言学习笔记"><span class="nav-number">1.</span> <span class="nav-text">go语言学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组，切片，映射"><span class="nav-number">1.1.</span> <span class="nav-text">数组，切片，映射</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">1.1.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切片"><span class="nav-number">1.1.2.</span> <span class="nav-text">切片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#映射"><span class="nav-number">1.1.3.</span> <span class="nav-text">映射</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型系统"><span class="nav-number">1.2.</span> <span class="nav-text">类型系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户定义类型"><span class="nav-number">1.2.1.</span> <span class="nav-text">用户定义类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法"><span class="nav-number">1.2.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类型本质"><span class="nav-number">1.2.3.</span> <span class="nav-text">类型本质</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#内置类型"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">内置类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#引用类型"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#结构类型"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">结构类型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接口"><span class="nav-number">1.2.4.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌入类型"><span class="nav-number">1.2.5.</span> <span class="nav-text">嵌入类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#公开或未公开标识符"><span class="nav-number">1.2.6.</span> <span class="nav-text">公开或未公开标识符</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ww2000e</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">71k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">1:05</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
