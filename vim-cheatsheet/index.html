@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="ww2000e的手账">
 <meta property="og:description" content="无插件vim使用vim快捷键~/.vimrc配置1234set history=200set tabstop=4set expandtabsyntax on 方向移动   按键 功能     w,b 左右移到一个单词，光标停在下一个单词开头   W,B 左右移到下一个单词开头，但忽略一些标点   e,ge 左右移一个单词，光标停在下一个单词末尾   E,gE 左右移一个单词末尾，如果词尾有标点，则">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-01T00:53:48.215Z">
+<meta property="og:updated_time" content="2019-03-11T01:20:38.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vim Cheatsheet">
 <meta name="twitter:description" content="无插件vim使用vim快捷键~/.vimrc配置1234set history=200set tabstop=4set expandtabsyntax on 方向移动   按键 功能     w,b 左右移到一个单词，光标停在下一个单词开头   W,B 左右移到下一个单词开头，但忽略一些标点   e,ge 左右移一个单词，光标停在下一个单词末尾   E,gE 左右移一个单词末尾，如果词尾有标点，则">
@@ -1050,6 +1050,7 @@
 <h3 id="打开压缩文件编辑"><a href="#打开压缩文件编辑" class="headerlink" title="打开压缩文件编辑"></a>打开压缩文件编辑</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim archive.tar.gz</span><br></pre></td></tr></table></figure>
 <p>支持tar.gz., tgz, zip, jar等</p>
 <h3 id="编辑远程文件"><a href="#编辑远程文件" class="headerlink" title="编辑远程文件"></a>编辑远程文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim scp://user@myserver[:port]//path/to/file.txt</span><br></pre></td></tr></table></figure>
+<h3 id="纵向批量编辑"><a href="#纵向批量编辑" class="headerlink" title="纵向批量编辑"></a>纵向批量编辑</h3><p>ctrl-v 进入纵向编辑模式<br>G 移动游标到最后一行，可视块覆盖所要修改的列<br>r 进入修改模式</p>
 
         
       </div>
@@ -1120,7 +1121,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1291,7 +1292,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#无插件vim使用"><span class="nav-number">1.</span> <span class="nav-text">无插件vim使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vim快捷键"><span class="nav-number">1.1.</span> <span class="nav-text">vim快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vimrc配置"><span class="nav-number">1.1.1.</span> <span class="nav-text">~/.vimrc配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方向移动"><span class="nav-number">1.1.2.</span> <span class="nav-text">方向移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作"><span class="nav-number">1.1.3.</span> <span class="nav-text">操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多标签编辑"><span class="nav-number">1.1.4.</span> <span class="nav-text">多标签编辑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分屏"><span class="nav-number">1.1.5.</span> <span class="nav-text">分屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭多个窗口"><span class="nav-number">1.1.6.</span> <span class="nav-text">关闭多个窗口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调整窗口大小"><span class="nav-number">1.1.7.</span> <span class="nav-text">调整窗口大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切换移动窗口"><span class="nav-number">1.1.8.</span> <span class="nav-text">切换移动窗口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动补全"><span class="nav-number">1.1.9.</span> <span class="nav-text">自动补全</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#单词自动补全"><span class="nav-number">1.1.9.1.</span> <span class="nav-text">单词自动补全</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#行自动补全"><span class="nav-number">1.1.9.2.</span> <span class="nav-text">行自动补全</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文件名自动补全"><span class="nav-number">1.1.9.3.</span> <span class="nav-text">文件名自动补全</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文件浏览"><span class="nav-number">1.1.9.4.</span> <span class="nav-text">文件浏览</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vimgrep"><span class="nav-number">1.1.10.</span> <span class="nav-text">vimgrep</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vimdiff快捷键"><span class="nav-number">1.2.</span> <span class="nav-text">vimdiff快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开压缩文件编辑"><span class="nav-number">1.3.</span> <span class="nav-text">打开压缩文件编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑远程文件"><span class="nav-number">1.4.</span> <span class="nav-text">编辑远程文件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#无插件vim使用"><span class="nav-number">1.</span> <span class="nav-text">无插件vim使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vim快捷键"><span class="nav-number">1.1.</span> <span class="nav-text">vim快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vimrc配置"><span class="nav-number">1.1.1.</span> <span class="nav-text">~/.vimrc配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方向移动"><span class="nav-number">1.1.2.</span> <span class="nav-text">方向移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作"><span class="nav-number">1.1.3.</span> <span class="nav-text">操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多标签编辑"><span class="nav-number">1.1.4.</span> <span class="nav-text">多标签编辑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分屏"><span class="nav-number">1.1.5.</span> <span class="nav-text">分屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭多个窗口"><span class="nav-number">1.1.6.</span> <span class="nav-text">关闭多个窗口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调整窗口大小"><span class="nav-number">1.1.7.</span> <span class="nav-text">调整窗口大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切换移动窗口"><span class="nav-number">1.1.8.</span> <span class="nav-text">切换移动窗口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动补全"><span class="nav-number">1.1.9.</span> <span class="nav-text">自动补全</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#单词自动补全"><span class="nav-number">1.1.9.1.</span> <span class="nav-text">单词自动补全</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#行自动补全"><span class="nav-number">1.1.9.2.</span> <span class="nav-text">行自动补全</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文件名自动补全"><span class="nav-number">1.1.9.3.</span> <span class="nav-text">文件名自动补全</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文件浏览"><span class="nav-number">1.1.9.4.</span> <span class="nav-text">文件浏览</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vimgrep"><span class="nav-number">1.1.10.</span> <span class="nav-text">vimgrep</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vimdiff快捷键"><span class="nav-number">1.2.</span> <span class="nav-text">vimdiff快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开压缩文件编辑"><span class="nav-number">1.3.</span> <span class="nav-text">打开压缩文件编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑远程文件"><span class="nav-number">1.4.</span> <span class="nav-text">编辑远程文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#纵向批量编辑"><span class="nav-number">1.5.</span> <span class="nav-text">纵向批量编辑</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1323,7 +1324,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">70k</span>
+    <span title="站点总字数">76k</span>
   
 
   
@@ -1332,7 +1333,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:04</span>
+    <span title="站点阅读时长">1:09</span>
   
 </div>
 
