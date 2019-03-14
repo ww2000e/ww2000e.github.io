@@ -606,10 +606,10 @@
 <h4 id="v-html-输出html标签"><a href="#v-html-输出html标签" class="headerlink" title="v-html 输出html标签"></a>v-html 输出html标签</h4><h4 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h4><p>动态更新HTML元素上的属性,比如id,class</p>
 <ul>
 <li><p>对象语法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :<span class="class"><span class="keyword">class</span></span>=<span class="string">"&#123; 'active': isActive &#125;"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="comment">// isActive为true时候得到active</span></span><br><span class="line"></span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"static"</span> :<span class="class"><span class="keyword">class</span></span>=<span class="string">"&#123; 'active: isActive, 'error': isError&#125;"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="comment">// :class可以与普通class共存</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// :class表达式过长，逻辑比较复杂时候，可以绑定计算属性</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :<span class="class"><span class="keyword">class</span></span>=<span class="string">"&#123; 'active': isActive &#125;"</span>&gt;&lt;/div&gt;</span><br><span class="line"><span class="comment">// isActive为true时候得到active</span></span><br><span class="line"></span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"static"</span> :<span class="class"><span class="keyword">class</span></span>=<span class="string">"&#123; 'active: isActive, 'error': isError&#125;"</span>&gt;&lt;/div&gt;</span><br><span class="line"><span class="comment">// :class可以与普通class共存</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// :class表达式过长，逻辑比较复杂时候，可以绑定计算属性</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>数组语法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :<span class="class"><span class="keyword">class</span></span>=<span class="string">"[activeCls, errorCls]"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="comment">// 可以给:class绑定一个数组</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :<span class="class"><span class="keyword">class</span></span>=<span class="string">"[activeCls, errorCls]"</span>&gt;&lt;/div&gt;</span><br><span class="line"><span class="comment">// 可以给:class绑定一个数组</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h4><p>绑定事件监听</p>
@@ -794,10 +794,6 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
-                    
-                      
-                    
-                      
                     
                       
                     

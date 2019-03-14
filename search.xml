@@ -21,8 +21,8 @@
         <category>docker</category>
       </categories>
       <tags>
-        <tag>win10</tag>
         <tag>docker</tag>
+        <tag>win10</tag>
       </tags>
   </entry>
   <entry>
@@ -155,8 +155,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>学习笔记</tag>
         <tag>hexo</tag>
+        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -190,8 +190,8 @@
         <category>git</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>学习笔记</tag>
+        <tag>git</tag>
       </tags>
   </entry>
 </search>
