@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="KEEP CALM AND LEARN ON">
 <meta property="og:description" content="常用命令查看正在使用什么shell12ps -p $$echo $0 查看所有已安装shell1cat /etc/shells grep12345678910grep forest f.txt     #文件查找grep forest f.txt cpf.txt #多文件查找grep &amp;apos;log&amp;apos; /home/admin -r -n #目录下查找所有符合关键字的文件cat f.t">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-11T05:50:01.672Z">
+<meta property="og:updated_time" content="2019-03-25T01:32:42.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux shell笔记">
 <meta name="twitter:description" content="常用命令查看正在使用什么shell12ps -p $$echo $0 查看所有已安装shell1cat /etc/shells grep12345678910grep forest f.txt     #文件查找grep forest f.txt cpf.txt #多文件查找grep &amp;apos;log&amp;apos; /home/admin -r -n #目录下查找所有符合关键字的文件cat f.t">
@@ -513,7 +513,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-11 13:50:01" itemprop="dateModified" datetime="2019-03-11T13:50:01+08:00">2019-03-11</time>
+                <time title="修改时间：2019-03-25 09:32:42" itemprop="dateModified" datetime="2019-03-25T09:32:42+08:00">2019-03-25</time>
               
             
           </span>
@@ -559,7 +559,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.7k</span>
+                <span title="本文字数">2.9k</span>
               
 
               
@@ -573,7 +573,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -612,11 +612,39 @@
 <h6 id="tee"><a href="#tee" class="headerlink" title="tee"></a>tee</h6><p>待补充</p>
 <h6 id="find"><a href="#find" class="headerlink" title="find"></a>find</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">sudo -u admin find /home/admin /tmp /usr -name \*.log(多个目录去找)</span><br><span class="line">find . -iname \*.txt(大小写都匹配)</span><br><span class="line">find . -type d(当前目录下的所有子目录)</span><br><span class="line">find /usr -type l(当前目录下所有的符号链接)</span><br><span class="line">find /usr -type l -name &quot;z*&quot; -ls(符号链接的详细信息 eg:inode,目录)</span><br><span class="line">find /home/admin -size +250000k(超过250000k的文件，当然+改成-就是小于了)</span><br><span class="line">find /home/admin f -perm 777 -exec ls -l &#123;&#125; \; (按照权限查询文件)</span><br><span class="line">find /home/admin -atime -1  1天内访问过的文件</span><br><span class="line">find /home/admin -ctime -1  1天内状态改变过的文件    </span><br><span class="line">find /home/admin -mtime -1  1天内修改过的文件</span><br><span class="line">find /home/admin -amin -1  1分钟内访问过的文件</span><br><span class="line">find /home/admin -cmin -1  1分钟内状态改变过的文件    </span><br><span class="line">find /home/admin -mmin -1  1分钟内修改过的文件</span><br></pre></td></tr></table></figure>
 <h4 id="其他问题记录"><a href="#其他问题记录" class="headerlink" title="其他问题记录"></a>其他问题记录</h4><h6 id="kill掉bash中while循环"><a href="#kill掉bash中while循环" class="headerlink" title="kill掉bash中while循环"></a>kill掉bash中while循环</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 当写了 while [[ 1 ]]; do somecmd; sleep 60; done &amp;后如何kill掉此循环</span><br><span class="line">// 执行命令找出关系</span><br><span class="line"><span class="meta">$</span>ps fjx</span><br><span class="line">2226  9411  9411  8383 ?           -1 S     1000   0:00  \_ /bin/bash</span><br><span class="line">9411 17674  9411  8383 ?           -1 Sl    1000   0:00      \_ somecmd</span><br><span class="line">// 9411就是执行while进程</span><br></pre></td></tr></table></figure>
-<h6 id="centos的yum报错-24releasever"><a href="#centos的yum报错-24releasever" class="headerlink" title="centos的yum报错%24releasever"></a>centos的yum报错%24releasever</h6><p>别人装好的centos一个源都没有，配置源后又和redhat-release冲突执行，给redhat-release删了后，执行yum命令的时候提示<br><a href="http://mirrors.aliyun.com/centos/%24releasever/addons/x86_64/repodata/repomd.xml" target="_blank" rel="noopener">http://mirrors.aliyun.com/centos/%24releasever/addons/x86_64/repodata/repomd.xml</a><br>应该是环境变量$releasever没了,yum –releasever=7 install centos-release后依然无效。不知道这个变量存在哪，网上找了个设置方法。。</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<h5 id="centos的yum报错-releasever"><a href="#centos的yum报错-releasever" class="headerlink" title="centos的yum报错$releasever"></a>centos的yum报错$releasever</h5><p>别人装好的centos一个源都没有，配置源后又和redhat-release冲突执行，给redhat-release删了后，执行yum命令的时候提示<br><a href="http://mirrors.aliyun.com/centos/%24releasever/addons/x86_64/repodata/repomd.xml" target="_blank" rel="noopener">http://mirrors.aliyun.com/centos/%24releasever/addons/x86_64/repodata/repomd.xml</a><br>应该是环境变量$releasever没了,yum –releasever=7 install centos-release后依然无效。不知道这个变量存在哪，网上找了个设置方法。。</p>
 <p>解决方法:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>echo 7 &gt; /etc/yum/vars/releasever</span><br></pre></td></tr></table></figure></p>
+<h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><ul>
+<li><p>查看正在使用什么shell</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -p $$</span><br><span class="line">echo $0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看所有已安装shell</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/shells</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改shell</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/ksh</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <div class="note info">
             <p>参考：<br>    <a href="https://yq.aliyun.com/articles/69520?utm_content=m_10360" target="_blank" rel="noopener">https://yq.aliyun.com/articles/69520?utm_content=m_10360</a></p>
           </div>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>b16a95d8d40f6e6dee9ac2b3ed7aec1dcfe89983</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
       
     </div>
 
@@ -763,7 +791,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -802,7 +830,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -857,7 +887,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -939,7 +973,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令"><span class="nav-number">1.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#查看正在使用什么shell"><span class="nav-number">1.0.1.</span> <span class="nav-text">查看正在使用什么shell</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#查看所有已安装shell"><span class="nav-number">1.0.2.</span> <span class="nav-text">查看所有已安装shell</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#grep"><span class="nav-number">1.0.3.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#awk"><span class="nav-number">1.0.4.</span> <span class="nav-text">awk</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#tr"><span class="nav-number">1.0.5.</span> <span class="nav-text">tr</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#tee"><span class="nav-number">1.0.6.</span> <span class="nav-text">tee</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#find"><span class="nav-number">1.0.7.</span> <span class="nav-text">find</span></a></li></ol></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#其他问题记录"><span class="nav-number">2.</span> <span class="nav-text">其他问题记录</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#kill掉bash中while循环"><span class="nav-number">2.0.1.</span> <span class="nav-text">kill掉bash中while循环</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#centos的yum报错-24releasever"><span class="nav-number">2.0.2.</span> <span class="nav-text">centos的yum报错%24releasever</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令"><span class="nav-number">1.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#查看正在使用什么shell"><span class="nav-number">1.0.1.</span> <span class="nav-text">查看正在使用什么shell</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#查看所有已安装shell"><span class="nav-number">1.0.2.</span> <span class="nav-text">查看所有已安装shell</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#grep"><span class="nav-number">1.0.3.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#awk"><span class="nav-number">1.0.4.</span> <span class="nav-text">awk</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#tr"><span class="nav-number">1.0.5.</span> <span class="nav-text">tr</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#tee"><span class="nav-number">1.0.6.</span> <span class="nav-text">tee</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#find"><span class="nav-number">1.0.7.</span> <span class="nav-text">find</span></a></li></ol></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#其他问题记录"><span class="nav-number">2.</span> <span class="nav-text">其他问题记录</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#kill掉bash中while循环"><span class="nav-number">2.0.1.</span> <span class="nav-text">kill掉bash中while循环</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#centos的yum报错-releasever"><span class="nav-number">2.1.</span> <span class="nav-text">centos的yum报错$releasever</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#其他"><span class="nav-number">2.2.</span> <span class="nav-text">其他</span></a></li></div>
             
 
           </div>
@@ -971,7 +1005,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">76k</span>
+    <span title="站点总字数">78k</span>
   
 
   
@@ -980,7 +1014,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:09</span>
+    <span title="站点阅读时长">1:11</span>
   
 </div>
 

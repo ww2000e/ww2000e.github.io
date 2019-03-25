@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="KEEP CALM AND LEARN ON">
 <meta property="og:description" content="无插件vim使用vim快捷键~/.vimrc配置1234set history=200set tabstop=4set expandtabsyntax on 方向移动   按键 功能     w,b 左右移到一个单词，光标停在下一个单词开头   W,B 左右移到下一个单词开头，但忽略一些标点   e,ge 左右移一个单词，光标停在下一个单词末尾   E,gE 左右移一个单词末尾，如果词尾有标点，则">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-11T01:20:38.222Z">
+<meta property="og:updated_time" content="2019-03-25T01:32:42.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vim Cheatsheet">
 <meta name="twitter:description" content="无插件vim使用vim快捷键~/.vimrc配置1234set history=200set tabstop=4set expandtabsyntax on 方向移动   按键 功能     w,b 左右移到一个单词，光标停在下一个单词开头   W,B 左右移到下一个单词开头，但忽略一些标点   e,ge 左右移一个单词，光标停在下一个单词末尾   E,gE 左右移一个单词末尾，如果词尾有标点，则">
@@ -711,8 +711,16 @@
 <td>垂直分割窗口，同时打开file1和file2</td>
 </tr>
 <tr>
+<td>vim  -o5 file1  file2</td>
+<td>将分配5个相同的窗口，有3个是闲置的</td>
+</tr>
+<tr>
 <td>:sp[lit]</td>
 <td>把当前窗水平分割成两个窗口。(CTRL-W s 或 CTRL-W CTRL-S) 注意如果在终端下，CTRL-S可能会冻结终端，请按CTRL-Q继续</td>
+</tr>
+<tr>
+<td>:vsplit</td>
+<td>创建全新的垂直分割的窗口，同样是显示和当前窗口同一个文件内容</td>
 </tr>
 <tr>
 <td>:split filename</td>
@@ -771,15 +779,15 @@
 </thead>
 <tbody>
 <tr>
-<td>ctrl+w +</td>
+<td>ctrl+W +</td>
 <td>当前窗口增高一行。也可以用n增高n行</td>
 </tr>
 <tr>
-<td>ctrl+w -</td>
+<td>ctrl+W -</td>
 <td>当前窗口减小一行。也可以用n减小n行</td>
 </tr>
 <tr>
-<td>ctrl+w _</td>
+<td>ctrl+W _</td>
 <td>当前窗口扩展到尽可能的大。也可以用n设定行数</td>
 </tr>
 <tr>
@@ -787,24 +795,23 @@
 <td>当前窗口n行高</td>
 </tr>
 <tr>
-<td>ctrl+w =</td>
+<td>ctrl+W =</td>
 <td>所有窗口同样高度</td>
 </tr>
 <tr>
-<td>n ctrl+w _</td>
+<td>n ctrl+W _</td>
 <td>当前窗口的高度设定为n行</td>
 </tr>
 <tr>
-<td>ctrl+w &lt;</td>
+<td>ctrl+W &lt;</td>
 <td>当前窗口减少一列。也可以用n减少n列</td>
 </tr>
 <tr>
-<td>ctrl+w &gt;</td>
+<td>ctrl+W &gt;</td>
 <td>当前窗口增宽一列。也可以用n增宽n列</td>
 </tr>
 <tr>
-<td>ctrl+w</td>
-<td></td>
+<td>ctrl+W &#124;</td>
 <td>当前窗口尽可能的宽。也可以用n设定列数</td>
 </tr>
 </tbody>
@@ -1121,7 +1128,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1160,7 +1167,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1215,7 +1224,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1329,7 +1342,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">76k</span>
+    <span title="站点总字数">78k</span>
   
 
   
@@ -1338,7 +1351,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:09</span>
+    <span title="站点阅读时长">1:11</span>
   
 </div>
 
