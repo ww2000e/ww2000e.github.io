@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[vim插件安装使用整理记录]]></title>
+    <url>%2F2019%2F03%2F27%2Fvim-plugin-note%2F</url>
+    <content type="text"><![CDATA[自己用到的vim插件安装，使用方法记录。基于vim8.x。插件管理使用vundle。 vundle ctrl-p vim-vue vim-flake8 vim-autoformat vim-go vundle插件管理工具 安装先获取插件1git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 然后.vimrc中加入以下配置, 按照模板修改下,里面写的几个plugin我都删了 12345678910111213141516171819202122232425262728293031323334353637383940414243set nocompatible &quot; be iMproved, requiredfiletype off &quot; required&quot; set the runtime path to include Vundle and initializeset rtp+=~/.vim/bundle/Vundle.vimcall vundle#begin()&quot; alternatively, pass a path where Vundle should install plugins&quot;call vundle#begin(&apos;~/some/path/here&apos;)&quot; let Vundle manage Vundle, requiredPlugin &apos;VundleVim/Vundle.vim&apos;&quot; The following are examples of different formats supported.&quot; Keep Plugin commands between vundle#begin/end.&quot; plugin on GitHub repoPlugin &apos;tpope/vim-fugitive&apos;&quot; plugin from http://vim-scripts.org/vim/scripts.html&quot; Plugin &apos;L9&apos;&quot; Git plugin not hosted on GitHubPlugin &apos;git://git.wincent.com/command-t.git&apos;&quot; git repos on your local machine (i.e. when working on your own plugin)Plugin &apos;file:///home/gmarik/path/to/plugin&apos;&quot; The sparkup vim script is in a subdirectory of this repo called vim.&quot; Pass the path to set the runtimepath properly.Plugin &apos;rstacruz/sparkup&apos;, &#123;&apos;rtp&apos;: &apos;vim/&apos;&#125;&quot; Install L9 and avoid a Naming conflict if you&apos;ve already installed a&quot; different version somewhere else.&quot; Plugin &apos;ascenator/L9&apos;, &#123;&apos;name&apos;: &apos;newL9&apos;&#125;&quot; All of your Plugins must be added before the following linecall vundle#end() &quot; requiredfiletype plugin indent on &quot; required&quot; To ignore plugin indent changes, instead use:&quot;filetype plugin on&quot;&quot; Brief help&quot; :PluginList - lists configured plugins&quot; :PluginInstall - installs plugins; append `!` to update or just :PluginUpdate&quot; :PluginSearch foo - searches for foo; append `!` to refresh local cache&quot; :PluginClean - confirms removal of unused plugins; append `!` to auto-approve removal&quot;&quot; see :h vundle for more details or wiki for FAQ&quot; Put your non-Plugin stuff after this line 配置完成后命令行执行1vim +PluginInstall +qall 或者vim里面命令行执行1:PluginInstall 使用查看帮助1:h vundle 常见命令12345:PluginInstall:PluginUpdate:PluginSearch:PluginList:PluginClean ctrl-p模糊搜索文件插件 安装打开.vimrc加入下面内容后，执行:PluginInstall1Plugin &apos;ctrlpvim/ctrlp.vim&apos; 使用 快捷键 功能 ctrl + p 开启文件搜索 F5 刷新当前目录内容 ctrl + f/b 切换显示模式 ctrl + d 只搜索文件名 ctrl + r 正则查找模式 ctrl + j/k 搜索结果中移动光标 ctrl + t 新标签页打开 ctrl + v/x 垂直分割打开 / 水平分割打开 ctrl + n/p 上下翻阅上次搜索历史 ctrl + y 在选中文件的父级目录创建新文件 ctrl + z 标记选择多个文件 ctrl + o 选择打开方式 vim-vuevue代码高亮 安装.vimrc中加入1Plugin &apos;posva/vim-vue&apos; 使用打开.vue即可 vim-flake8检查python是否按pep8规范 安装123Plugin &apos;nvie/vim-flake8&apos;pip3 install flake8 使用按F7开启 vim-autoformatvim自动格式化代码插件 安装.vimrc中增加1Plugin &apos;Chiel92/vim-autoformat&apos; 增加快捷键配置1noremap &lt;F3&gt; :Autoformat&lt;CR&gt; 增加对python代码的支持,安装autopep81pip install --upgrade autopep8 使用按F3开启 vim-gogolang的高亮，代码检查插件。 安装很简单，主要是代理设置花了点功夫。 安装通过vundle安装，vimrc中设置1Plugin &apos;fatih/vim-go&apos; 然后执行1vim +PluginInstall +qall 没问题的话，go的高亮已经支持了，接下来开始安装一些工具,因为需要使用go get，所以得设置代理,一开始我直接export https_proxy或者git 配置代理，然后进入vim开始安装vim-go工具，总是go get失败，后来发现一个解决方法：1# export https_proxy=http://127.0.0.1:8118; vim 然后在vim命令行模式中输入1:GoInstallBinaries 即可全部安装完成。这样安装同样可用于其他go get命令，将export https_proxy写在go get前面。 使用vim命令行中查看说明1:h vim-go 快捷键 功能 ctrl + ] 跳转到定义处 ctrl + t 从ctrl + ] 跳转的地方跳转回去 参考 https://github.com/fatih/vim-go-tutorial#quick-setup]]></content>
+      <categories>
+        <category>vim</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[vim-go安装和使用]]></title>
     <url>%2F2019%2F03%2F24%2Fvim-go%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[vim-go安装很简单，主要是代理设置花了点功夫。 安装通过vundle安装，vimrc中设置1Plugin &apos;fatih/vim-go&apos; 然后执行1vim +PluginInstall +qall 没问题的话，go的高亮已经支持了，接下来开始安装一些工具,因为需要使用go get，所以得设置代理,一开始我直接export https_proxy或者git 配置代理，然后进入vim开始安装vim-go工具，总是go get失败，后来发现一个解决方法：1# export https_proxy=http://127.0.0.1:8118; vim 然后在vim命令行模式中输入1:GoInstallBinaries 即可全部安装完成。这样安装同样可用于其他go get命令，将export https_proxy写在go get前面。 使用 参考 https://github.com/fatih/vim-go-tutorial#quick-setup]]></content>
@@ -173,8 +184,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>学习笔记</tag>
         <tag>hexo</tag>
+        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -208,8 +219,8 @@
         <category>git</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>学习笔记</tag>
+        <tag>git</tag>
       </tags>
   </entry>
 </search>

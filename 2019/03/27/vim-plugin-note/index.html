@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="ubuntu 16.04 环境问题12ERROR Local hexo not found in ~/blog:ERROR Try running: &amp;apos;npm install hexo --save&amp;apos; 无论如何安装，运行hexo都会报错，最后更新nodejs，不使用源里面的解决了。">
-<meta name="keywords" content="hexo,学习笔记">
+  <meta name="description" content="自己用到的vim插件安装，使用方法记录。基于vim8.x。插件管理使用vundle。  vundle ctrl-p vim-vue vim-flake8 vim-autoformat vim-go">
+<meta name="keywords" content="vim">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo笔记">
-<meta property="og:url" content="https://ww2000e.gitee.io/2018/10/01/hexo笔记/index.html">
+<meta property="og:title" content="vim插件安装使用整理记录">
+<meta property="og:url" content="https://ww2000e.gitee.io/2019/03/27/vim-plugin-note/index.html">
 <meta property="og:site_name" content="KEEP CALM AND LEARN ON">
-<meta property="og:description" content="ubuntu 16.04 环境问题12ERROR Local hexo not found in ~/blog:ERROR Try running: &amp;apos;npm install hexo --save&amp;apos; 无论如何安装，运行hexo都会报错，最后更新nodejs，不使用源里面的解决了。">
+<meta property="og:description" content="自己用到的vim插件安装，使用方法记录。基于vim8.x。插件管理使用vundle。  vundle ctrl-p vim-vue vim-flake8 vim-autoformat vim-go">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-11T13:19:56.296Z">
+<meta property="og:updated_time" content="2019-04-01T00:57:02.531Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo笔记">
-<meta name="twitter:description" content="ubuntu 16.04 环境问题12ERROR Local hexo not found in ~/blog:ERROR Try running: &amp;apos;npm install hexo --save&amp;apos; 无论如何安装，运行hexo都会报错，最后更新nodejs，不使用源里面的解决了。">
+<meta name="twitter:title" content="vim插件安装使用整理记录">
+<meta name="twitter:description" content="自己用到的vim插件安装，使用方法记录。基于vim8.x。插件管理使用vundle。  vundle ctrl-p vim-vue vim-flake8 vim-autoformat vim-go">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://ww2000e.gitee.io/2018/10/01/hexo笔记/">
+  <link rel="canonical" href="https://ww2000e.gitee.io/2019/03/27/vim-plugin-note/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>hexo笔记 | KEEP CALM AND LEARN ON</title>
+  <title>vim插件安装使用整理记录 | KEEP CALM AND LEARN ON</title>
   
 
 
@@ -452,7 +452,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ww2000e.gitee.io/2018/10/01/hexo笔记/">
+    <link itemprop="mainEntityOfPage" href="https://ww2000e.gitee.io/2019/03/27/vim-plugin-note/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ww2000e">
@@ -469,7 +469,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo笔记
+          <h1 class="post-title" itemprop="name headline">vim插件安装使用整理记录
 
               
             
@@ -495,7 +495,7 @@
                 
               
 
-              <time title="创建时间：2018-10-01 21:02:01" itemprop="dateCreated datePublished" datetime="2018-10-01T21:02:01+08:00">2018-10-01</time>
+              <time title="创建时间：2019-03-27 10:42:17" itemprop="dateCreated datePublished" datetime="2019-03-27T10:42:17+08:00">2019-03-27</time>
             
 
             
@@ -512,7 +512,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-11 21:19:56" itemprop="dateModified" datetime="2019-01-11T21:19:56+08:00">2019-01-11</time>
+                <time title="修改时间：2019-04-01 08:57:02" itemprop="dateModified" datetime="2019-04-01T08:57:02+08:00">2019-04-01</time>
               
             
           </span>
@@ -529,7 +529,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/vim/" itemprop="url" rel="index"><span itemprop="name">vim</span></a></span>
 
                 
                 
@@ -558,7 +558,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">152</span>
+                <span title="本文字数">3.8k</span>
               
 
               
@@ -572,7 +572,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -592,9 +592,123 @@
       
 
       
-        <h3 id="ubuntu-16-04-环境问题"><a href="#ubuntu-16-04-环境问题" class="headerlink" title="ubuntu 16.04 环境问题"></a>ubuntu 16.04 环境问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ERROR Local hexo not found in ~/blog:</span><br><span class="line">ERROR Try running: &apos;npm install hexo --save&apos;</span><br></pre></td></tr></table></figure>
-<p>无论如何安装，运行hexo都会报错，最后更新nodejs，不使用源里面的解决了。</p>
-
+        <p>自己用到的vim插件安装，使用方法记录。基于vim8.x。插件管理使用vundle。</p>
+<ul>
+<li>vundle</li>
+<li>ctrl-p</li>
+<li>vim-vue</li>
+<li>vim-flake8</li>
+<li>vim-autoformat</li>
+<li>vim-go</li>
+</ul>
+<a id="more"></a>
+<h2 id="vundle"><a href="#vundle" class="headerlink" title="vundle"></a>vundle</h2><p>插件管理工具</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>先获取插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</span><br></pre></td></tr></table></figure></p>
+<p>然后.vimrc中加入以下配置, 按照模板修改下,里面写的几个plugin我都删了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">set nocompatible              &quot; be iMproved, required</span><br><span class="line">filetype off                  &quot; required</span><br><span class="line"></span><br><span class="line">&quot; set the runtime path to include Vundle and initialize</span><br><span class="line">set rtp+=~/.vim/bundle/Vundle.vim</span><br><span class="line">call vundle#begin()</span><br><span class="line">&quot; alternatively, pass a path where Vundle should install plugins</span><br><span class="line">&quot;call vundle#begin(&apos;~/some/path/here&apos;)</span><br><span class="line"></span><br><span class="line">&quot; let Vundle manage Vundle, required</span><br><span class="line">Plugin &apos;VundleVim/Vundle.vim&apos;</span><br><span class="line"></span><br><span class="line">&quot; The following are examples of different formats supported.</span><br><span class="line">&quot; Keep Plugin commands between vundle#begin/end.</span><br><span class="line">&quot; plugin on GitHub repo</span><br><span class="line">Plugin &apos;tpope/vim-fugitive&apos;</span><br><span class="line">&quot; plugin from http://vim-scripts.org/vim/scripts.html</span><br><span class="line">&quot; Plugin &apos;L9&apos;</span><br><span class="line">&quot; Git plugin not hosted on GitHub</span><br><span class="line">Plugin &apos;git://git.wincent.com/command-t.git&apos;</span><br><span class="line">&quot; git repos on your local machine (i.e. when working on your own plugin)</span><br><span class="line">Plugin &apos;file:///home/gmarik/path/to/plugin&apos;</span><br><span class="line">&quot; The sparkup vim script is in a subdirectory of this repo called vim.</span><br><span class="line">&quot; Pass the path to set the runtimepath properly.</span><br><span class="line">Plugin &apos;rstacruz/sparkup&apos;, &#123;&apos;rtp&apos;: &apos;vim/&apos;&#125;</span><br><span class="line">&quot; Install L9 and avoid a Naming conflict if you&apos;ve already installed a</span><br><span class="line">&quot; different version somewhere else.</span><br><span class="line">&quot; Plugin &apos;ascenator/L9&apos;, &#123;&apos;name&apos;: &apos;newL9&apos;&#125;</span><br><span class="line"></span><br><span class="line">&quot; All of your Plugins must be added before the following line</span><br><span class="line">call vundle#end()            &quot; required</span><br><span class="line">filetype plugin indent on    &quot; required</span><br><span class="line">&quot; To ignore plugin indent changes, instead use:</span><br><span class="line">&quot;filetype plugin on</span><br><span class="line">&quot;</span><br><span class="line">&quot; Brief help</span><br><span class="line">&quot; :PluginList       - lists configured plugins</span><br><span class="line">&quot; :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate</span><br><span class="line">&quot; :PluginSearch foo - searches for foo; append `!` to refresh local cache</span><br><span class="line">&quot; :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal</span><br><span class="line">&quot;</span><br><span class="line">&quot; see :h vundle for more details or wiki for FAQ</span><br><span class="line">&quot; Put your non-Plugin stuff after this line</span><br></pre></td></tr></table></figure>
+<p>配置完成后命令行执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim +PluginInstall +qall</span><br></pre></td></tr></table></figure></p>
+<p>或者vim里面命令行执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:PluginInstall</span><br></pre></td></tr></table></figure></p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>查看帮助<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:h vundle</span><br></pre></td></tr></table></figure></p>
+<p>常见命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:PluginInstall</span><br><span class="line">:PluginUpdate</span><br><span class="line">:PluginSearch</span><br><span class="line">:PluginList</span><br><span class="line">:PluginClean</span><br></pre></td></tr></table></figure></p>
+<h2 id="ctrl-p"><a href="#ctrl-p" class="headerlink" title="ctrl-p"></a>ctrl-p</h2><p>模糊搜索文件插件</p>
+<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>打开.vimrc加入下面内容后，执行:PluginInstall<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;ctrlpvim/ctrlp.vim&apos;</span><br></pre></td></tr></table></figure></p>
+<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctrl + p</td>
+<td>开启文件搜索</td>
+</tr>
+<tr>
+<td>F5</td>
+<td>刷新当前目录内容</td>
+</tr>
+<tr>
+<td>ctrl + f/b</td>
+<td>切换显示模式</td>
+</tr>
+<tr>
+<td>ctrl + d</td>
+<td>只搜索文件名</td>
+</tr>
+<tr>
+<td>ctrl + r</td>
+<td>正则查找模式</td>
+</tr>
+<tr>
+<td>ctrl + j/k</td>
+<td>搜索结果中移动光标</td>
+</tr>
+<tr>
+<td>ctrl + t</td>
+<td>新标签页打开</td>
+</tr>
+<tr>
+<td>ctrl + v/x</td>
+<td>垂直分割打开 / 水平分割打开</td>
+</tr>
+<tr>
+<td>ctrl + n/p</td>
+<td>上下翻阅上次搜索历史</td>
+</tr>
+<tr>
+<td>ctrl + y</td>
+<td>在选中文件的父级目录创建新文件</td>
+</tr>
+<tr>
+<td>ctrl + z</td>
+<td>标记选择多个文件</td>
+</tr>
+<tr>
+<td>ctrl + o</td>
+<td>选择打开方式</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vim-vue"><a href="#vim-vue" class="headerlink" title="vim-vue"></a>vim-vue</h2><p>vue代码高亮</p>
+<h3 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h3><p>.vimrc中加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;posva/vim-vue&apos;</span><br></pre></td></tr></table></figure></p>
+<h3 id="使用-2"><a href="#使用-2" class="headerlink" title="使用"></a>使用</h3><p>打开.vue即可</p>
+<h2 id="vim-flake8"><a href="#vim-flake8" class="headerlink" title="vim-flake8"></a>vim-flake8</h2><p>检查python是否按pep8规范</p>
+<h3 id="安装-3"><a href="#安装-3" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;nvie/vim-flake8&apos;</span><br><span class="line"></span><br><span class="line">pip3 install flake8</span><br></pre></td></tr></table></figure>
+<h3 id="使用-3"><a href="#使用-3" class="headerlink" title="使用"></a>使用</h3><p>按F7开启</p>
+<h2 id="vim-autoformat"><a href="#vim-autoformat" class="headerlink" title="vim-autoformat"></a>vim-autoformat</h2><p>vim自动格式化代码插件</p>
+<h3 id="安装-4"><a href="#安装-4" class="headerlink" title="安装"></a>安装</h3><p>.vimrc中增加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;Chiel92/vim-autoformat&apos;</span><br></pre></td></tr></table></figure></p>
+<p>增加快捷键配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">noremap &lt;F3&gt; :Autoformat&lt;CR&gt;</span><br></pre></td></tr></table></figure></p>
+<p>增加对python代码的支持,安装autopep8<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade autopep8</span><br></pre></td></tr></table></figure></p>
+<h3 id="使用-4"><a href="#使用-4" class="headerlink" title="使用"></a>使用</h3><p>按F3开启</p>
+<h2 id="vim-go"><a href="#vim-go" class="headerlink" title="vim-go"></a>vim-go</h2><p>golang的高亮，代码检查插件。 安装很简单，主要是代理设置花了点功夫。</p>
+<h3 id="安装-5"><a href="#安装-5" class="headerlink" title="安装"></a>安装</h3><p>通过vundle安装，vimrc中设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;fatih/vim-go&apos;</span><br></pre></td></tr></table></figure></p>
+<p>然后执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim +PluginInstall +qall</span><br></pre></td></tr></table></figure></p>
+<p>没问题的话，go的高亮已经支持了，接下来开始安装一些工具,因为需要使用go get，所以得设置代理,一开始我直接export https_proxy或者git 配置代理，然后进入vim开始安装vim-go工具，总是go get失败，后来发现一个解决方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># export https_proxy=http://127.0.0.1:8118; vim</span><br></pre></td></tr></table></figure></p>
+<p>然后在vim命令行模式中输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:GoInstallBinaries</span><br></pre></td></tr></table></figure></p>
+<p>即可全部安装完成。<br>这样安装同样可用于其他go get命令，将export https_proxy写在go get前面。</p>
+<h3 id="使用-5"><a href="#使用-5" class="headerlink" title="使用"></a>使用</h3><p>vim命令行中查看说明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:h vim-go</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctrl + ]</td>
+<td>跳转到定义处</td>
+</tr>
+<tr>
+<td>ctrl + t</td>
+<td>从ctrl + ] 跳转的地方跳转回去</td>
+</tr>
+</tbody>
+</table>
+<div class="note info">
+            <p>参考 <a href="https://github.com/fatih/vim-go-tutorial#quick-setup" target="_blank" rel="noopener">https://github.com/fatih/vim-go-tutorial#quick-setup</a></p>
+          </div>
       
     </div>
 
@@ -628,7 +742,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://ww2000e.gitee.io/2018/10/01/hexo笔记/" title="hexo笔记">https://ww2000e.gitee.io/2018/10/01/hexo笔记/</a>
+    <a href="https://ww2000e.gitee.io/2019/03/27/vim-plugin-note/" title="vim插件安装使用整理记录">https://ww2000e.gitee.io/2019/03/27/vim-plugin-note/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -641,9 +755,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
-            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+            <a href="/tags/vim/" rel="tag"># vim</a>
           
         </div>
       
@@ -656,8 +768,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/01/mongodb笔记/" rel="next" title="mongodb笔记">
-                <i class="fa fa-chevron-left"></i> mongodb笔记
+              <a href="/2019/03/24/vim-go安装和使用/" rel="next" title="vim-go安装和使用">
+                <i class="fa fa-chevron-left"></i> vim-go安装和使用
               </a>
             
           </div>
@@ -665,10 +777,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/02/vue-js笔记/" rel="prev" title="vue.js笔记">
-                vue.js笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -934,7 +1042,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ubuntu-16-04-环境问题"><span class="nav-number">1.</span> <span class="nav-text">ubuntu 16.04 环境问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vundle"><span class="nav-number">1.</span> <span class="nav-text">vundle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">1.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ctrl-p"><span class="nav-number">2.</span> <span class="nav-text">ctrl-p</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-1"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-1"><span class="nav-number">2.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-vue"><span class="nav-number">3.</span> <span class="nav-text">vim-vue</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-2"><span class="nav-number">3.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-2"><span class="nav-number">3.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-flake8"><span class="nav-number">4.</span> <span class="nav-text">vim-flake8</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-3"><span class="nav-number">4.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-3"><span class="nav-number">4.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-autoformat"><span class="nav-number">5.</span> <span class="nav-text">vim-autoformat</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-4"><span class="nav-number">5.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-4"><span class="nav-number">5.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-go"><span class="nav-number">6.</span> <span class="nav-text">vim-go</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-5"><span class="nav-number">6.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-5"><span class="nav-number">6.2.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></div>
             
 
           </div>

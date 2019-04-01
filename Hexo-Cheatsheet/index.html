@@ -44,23 +44,21 @@
 
 
 
-
-
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
 
 
 
@@ -73,8 +71,10 @@
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '7.0.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="KEEP CALM AND LEARN ON">
 <meta property="og:description" content="Hexo Next Themes Cheatsheethexo标签插件 https://hexo.io/zh-cn/docs/tag-plugins.html  Markdown 文档 https://markdown-zh.readthedocs.io/en/latest/  Font Awesome http://www.fontawesome.com.cn/faicons/https://f">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-11T01:20:38.217Z">
+<meta property="og:updated_time" content="2019-04-01T00:57:02.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HEXO Cheatsheet">
 <meta name="twitter:description" content="Hexo Next Themes Cheatsheethexo标签插件 https://hexo.io/zh-cn/docs/tag-plugins.html  Markdown 文档 https://markdown-zh.readthedocs.io/en/latest/  Font Awesome http://www.fontawesome.com.cn/faicons/https://f">
@@ -112,7 +112,8 @@
 
 
 
-
+  
+  
   <link rel="canonical" href="https://ww2000e.gitee.io/Hexo-Cheatsheet/">
 
 
@@ -555,6 +556,7 @@ something
 {% endcodeblock %}
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/sh</span><br><span class="line">something</span><br></pre></td></tr></table></figure>
+<h3 id="next主题中插入站内链接"><a href="#next主题中插入站内链接" class="headerlink" title="next主题中插入站内链接"></a>next主题中插入站内链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% post_link 文章标题 链接名称 %&#125;</span><br></pre></td></tr></table></figure>
         
       </div>
       
@@ -591,7 +593,6 @@ something
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
@@ -614,7 +615,7 @@ something
               <img class="site-author-image" itemprop="image" src="/images/touxiang.png" alt="ww2000e">
             
               <p class="site-author-name" itemprop="name">ww2000e</p>
-              <p class="site-description motion-element" itemprop="description">拖延症患者自救工具</p>
+              <div class="site-description motion-element" itemprop="description">拖延症患者自救工具</div>
           </div>
 
           
@@ -624,7 +625,7 @@ something
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -634,7 +635,11 @@ something
                 
                 
                 <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
                     
                     
                       
@@ -675,7 +680,11 @@ something
                 
                 
                 <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
                     
                     
                       
@@ -724,12 +733,16 @@ something
                     
                       
                     
-                    <span class="site-state-item-count">23</span>
+                      
+                    
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
               
             </nav>
+          
+
           
 
           
@@ -776,6 +789,7 @@ something
           
              <div class="cc-license motion-element" itemprop="license">
               
+              
                 
               
               
@@ -806,7 +820,7 @@ something
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-Next-Themes-Cheatsheet"><span class="nav-number">1.</span> <span class="nav-text">Hexo Next Themes Cheatsheet</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo标签插件"><span class="nav-number">1.1.</span> <span class="nav-text">hexo标签插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown-文档"><span class="nav-number">1.2.</span> <span class="nav-text">Markdown 文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Font-Awesome"><span class="nav-number">1.3.</span> <span class="nav-text">Font Awesome</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首页显示摘要"><span class="nav-number">1.4.</span> <span class="nav-text">首页显示摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#今日诗词"><span class="nav-number">1.5.</span> <span class="nav-text">今日诗词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊符号写法"><span class="nav-number">1.6.</span> <span class="nav-text">特殊符号写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格输入竖线‘-’"><span class="nav-number">1.7.</span> <span class="nav-text">表格输入竖线‘|’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Todo-写法"><span class="nav-number">1.8.</span> <span class="nav-text">Todo 写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Label标签"><span class="nav-number">1.9.</span> <span class="nav-text">Label标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tabs标签"><span class="nav-number">1.10.</span> <span class="nav-text">Tabs标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NOTE标签"><span class="nav-number">1.11.</span> <span class="nav-text">NOTE标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.12.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-Next-Themes-Cheatsheet"><span class="nav-number">1.</span> <span class="nav-text">Hexo Next Themes Cheatsheet</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo标签插件"><span class="nav-number">1.1.</span> <span class="nav-text">hexo标签插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown-文档"><span class="nav-number">1.2.</span> <span class="nav-text">Markdown 文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Font-Awesome"><span class="nav-number">1.3.</span> <span class="nav-text">Font Awesome</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首页显示摘要"><span class="nav-number">1.4.</span> <span class="nav-text">首页显示摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#今日诗词"><span class="nav-number">1.5.</span> <span class="nav-text">今日诗词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊符号写法"><span class="nav-number">1.6.</span> <span class="nav-text">特殊符号写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格输入竖线‘-’"><span class="nav-number">1.7.</span> <span class="nav-text">表格输入竖线‘|’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Todo-写法"><span class="nav-number">1.8.</span> <span class="nav-text">Todo 写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Label标签"><span class="nav-number">1.9.</span> <span class="nav-text">Label标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tabs标签"><span class="nav-number">1.10.</span> <span class="nav-text">Tabs标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NOTE标签"><span class="nav-number">1.11.</span> <span class="nav-text">NOTE标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.12.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#next主题中插入站内链接"><span class="nav-number">1.13.</span> <span class="nav-text">next主题中插入站内链接</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -818,6 +832,7 @@ something
 
     </div>
   </aside>
+  
 
 
         
@@ -838,7 +853,7 @@ something
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">78k</span>
+    <span title="站点总字数">81k</span>
   
 
   
@@ -847,7 +862,7 @@ something
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:11</span>
+    <span title="站点阅读时长">1:14</span>
   
 </div>
 
@@ -860,7 +875,7 @@ something
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.0.0</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.0.1</div>
 
 
 
@@ -925,8 +940,6 @@ something
 
 
 
-  
-
 
 
   
@@ -938,16 +951,13 @@ something
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
-  
-  <script src="/lib/reading_progress/reading_progress.js"></script>
-
 
   
 
 
-  <script src="/js/src/utils.js?v=7.0.0"></script>
+  <script src="/js/src/utils.js?v=7.0.1"></script>
 
-  <script src="/js/src/motion.js?v=7.0.0"></script>
+  <script src="/js/src/motion.js?v=7.0.1"></script>
 
 
 
@@ -955,25 +965,30 @@ something
   
 
 
-  <script src="/js/src/affix.js?v=7.0.0"></script>
+  <script src="/js/src/affix.js?v=7.0.1"></script>
 
-  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+  <script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
 
-
-
-
-  
-  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
-<script src="/js/src/post-details.js?v=7.0.0"></script>
 
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
 
 
-  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
+
+  
 
 
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
 
   
 
@@ -1329,85 +1344,45 @@ something
   
 
   
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
 
   
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
 
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function(i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap');
-      $(e).after($wrap);
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-          return $(e).text();
-        }).toArray().join('\n');
-        var ta = document.createElement('textarea');
-        var range = document.createRange(); //For Chrome
-        var sel = window.getSelection(); //For Chrome
-        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-        ta.style.top = yPosition + 'px'; //Prevent page scroll
-        ta.style.position = 'absolute';
-        ta.style.opacity = '0';
-        ta.value = code;
-        ta.textContent = code; //For FireFox
-        ta.contentEditable = true;
-        ta.readOnly = false;
-        document.body.appendChild(ta);
-        range.selectNode(ta);
-        sel.removeAllRanges();
-        sel.addRange(range);
-        ta.setSelectionRange(0, code.length);
-        var result = document.execCommand('copy');
-        
-          if (result) $(this).text('复制成功');
-          else $(this).text('复制失败');
-        
-        ta.blur(); //For iOS
-        $(this).blur();
-      })).on('mouseleave', function(e) {
-        var $b = $(this).find('.copy-btn');
-        setTimeout(function() {
-          $b.text('复制');
-        }, 300);
-      }).append(e);
-    })
-  </script>
-
+  
 
 </body>
 </html>
