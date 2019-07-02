@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[bash后台运行不提示进程号]]></title>
+    <url>%2F2019%2F07%2F02%2Fbash%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E4%B8%8D%E6%8F%90%E7%A4%BA%2F</url>
+    <content type="text"><![CDATA[linux的shell里面后台运行程序总会提示进程号和进程完成的提示 类似这样： 1234$ls &amp;[1] 119788$ [1] + 119788 done 如果不需要提示，可以这样解决： 1$(ls &amp;) 加一对括号即可,让它在子shell里面执行]]></content>
+      <categories>
+        <category>shell</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+        <tag>bash</tag>
+        <tag>zsh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux只能搜索到部分无线网问题解决]]></title>
     <url>%2F2019%2F06%2F13%2Flinuxwifi%2F</url>
     <content type="text"><![CDATA[​ 笔记本上ubuntu更新为最新的系统后，突然只能搜到一部分网络，家里的无线网搜索不出来，查了很多资料都没解决，直到有天突然win10也出现同样状况，查阅资料发现，win10可以修改无线网卡的country region值，一般1~13，和无线路由器的信道对上即可，原来是我无线路由自动设置的信道比较偏门，既然两个系统都搜索不到，还是改无线路由比较方便，登陆后，修改无线路由的信道为10，ubuntu，win10都可以正常连上了。]]></content>
@@ -41,8 +54,8 @@
       </categories>
       <tags>
         <tag>linux</tag>
-        <tag>学习笔记</tag>
         <tag>bash</tag>
+        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -149,8 +162,8 @@
       </categories>
       <tags>
         <tag>linux</tag>
-        <tag>学习笔记</tag>
         <tag>bash</tag>
+        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>

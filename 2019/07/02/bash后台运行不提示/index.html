@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="​        笔记本上ubuntu更新为最新的系统后，突然只能搜到一部分网络，家里的无线网搜索不出来，查了很多资料都没解决，直到有天突然win10也出现同样状况，查阅资料发现，win10可以修改无线网卡的country region值，一般1~13，和无线路由器的信道对上即可，原来是我无线路由自动设置的信道比较偏门，既然两个系统都搜索不到，还是改无线路由比较方便，登陆后，修改无线路由的信道为1">
-<meta name="keywords" content="linux">
+  <meta name="description" content="linux的shell里面后台运行程序总会提示进程号和进程完成的提示 类似这样： 1234$ls &amp;amp;[1] 119788$ [1] + 119788 done 如果不需要提示，可以这样解决： 1$(ls &amp;amp;) 加一对括号即可,让它在子shell里面执行">
+<meta name="keywords" content="shell,bash,zsh">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux只能搜索到部分无线网问题解决">
-<meta property="og:url" content="https://ww2000e.gitee.io/2019/06/13/linuxwifi/index.html">
+<meta property="og:title" content="bash后台运行不提示进程号">
+<meta property="og:url" content="https://ww2000e.gitee.io/2019/07/02/bash后台运行不提示/index.html">
 <meta property="og:site_name" content="KEEP CALM AND LEARN ON">
-<meta property="og:description" content="​        笔记本上ubuntu更新为最新的系统后，突然只能搜到一部分网络，家里的无线网搜索不出来，查了很多资料都没解决，直到有天突然win10也出现同样状况，查阅资料发现，win10可以修改无线网卡的country region值，一般1~13，和无线路由器的信道对上即可，原来是我无线路由自动设置的信道比较偏门，既然两个系统都搜索不到，还是改无线路由比较方便，登陆后，修改无线路由的信道为1">
+<meta property="og:description" content="linux的shell里面后台运行程序总会提示进程号和进程完成的提示 类似这样： 1234$ls &amp;amp;[1] 119788$ [1] + 119788 done 如果不需要提示，可以这样解决： 1$(ls &amp;amp;) 加一对括号即可,让它在子shell里面执行">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-13T02:47:56.672Z">
+<meta property="og:updated_time" content="2019-07-02T08:01:19.239Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux只能搜索到部分无线网问题解决">
-<meta name="twitter:description" content="​        笔记本上ubuntu更新为最新的系统后，突然只能搜到一部分网络，家里的无线网搜索不出来，查了很多资料都没解决，直到有天突然win10也出现同样状况，查阅资料发现，win10可以修改无线网卡的country region值，一般1~13，和无线路由器的信道对上即可，原来是我无线路由自动设置的信道比较偏门，既然两个系统都搜索不到，还是改无线路由比较方便，登陆后，修改无线路由的信道为1">
+<meta name="twitter:title" content="bash后台运行不提示进程号">
+<meta name="twitter:description" content="linux的shell里面后台运行程序总会提示进程号和进程完成的提示 类似这样： 1234$ls &amp;amp;[1] 119788$ [1] + 119788 done 如果不需要提示，可以这样解决： 1$(ls &amp;amp;) 加一对括号即可,让它在子shell里面执行">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://ww2000e.gitee.io/2019/06/13/linuxwifi/">
+  <link rel="canonical" href="https://ww2000e.gitee.io/2019/07/02/bash后台运行不提示/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>linux只能搜索到部分无线网问题解决 | KEEP CALM AND LEARN ON</title>
+  <title>bash后台运行不提示进程号 | KEEP CALM AND LEARN ON</title>
   
 
 
@@ -469,7 +469,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ww2000e.gitee.io/2019/06/13/linuxwifi/">
+    <link itemprop="mainEntityOfPage" href="https://ww2000e.gitee.io/2019/07/02/bash后台运行不提示/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ww2000e">
@@ -486,7 +486,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux只能搜索到部分无线网问题解决
+          <h1 class="post-title" itemprop="name headline">bash后台运行不提示进程号
 
               
             
@@ -512,7 +512,7 @@
                 
               
 
-              <time title="创建时间：2019-06-13 10:35:08 / 修改时间：10:47:56" itemprop="dateCreated datePublished" datetime="2019-06-13T10:35:08+08:00">2019-06-13</time>
+              <time title="创建时间：2019-07-02 15:55:23 / 修改时间：16:01:19" itemprop="dateCreated datePublished" datetime="2019-07-02T15:55:23+08:00">2019-07-02</time>
             
 
             
@@ -522,6 +522,24 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/shell/" itemprop="url" rel="index"><span itemprop="name">shell</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -545,7 +563,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">224</span>
+                <span title="本文字数">135</span>
               
 
               
@@ -579,7 +597,12 @@
       
 
       
-        <p>​        笔记本上ubuntu更新为最新的系统后，突然只能搜到一部分网络，家里的无线网搜索不出来，查了很多资料都没解决，直到有天突然win10也出现同样状况，查阅资料发现，win10可以修改无线网卡的country region值，一般1~13，和无线路由器的信道对上即可，原来是我无线路由自动设置的信道比较偏门，既然两个系统都搜索不到，还是改无线路由比较方便，登陆后，修改无线路由的信道为10，ubuntu，win10都可以正常连上了。</p>
+        <p>linux的shell里面后台运行程序总会提示进程号和进程完成的提示</p>
+<p>类似这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ls &amp;</span><br><span class="line">[1] 119788</span><br><span class="line">$ </span><br><span class="line">[1] + 119788 done</span><br></pre></td></tr></table></figure>
+<p>如果不需要提示，可以这样解决：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(ls &amp;)</span><br></pre></td></tr></table></figure>
+<p>加一对括号即可,让它在子shell里面执行</p>
 
       
     </div>
@@ -614,7 +637,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://ww2000e.gitee.io/2019/06/13/linuxwifi/" title="linux只能搜索到部分无线网问题解决">https://ww2000e.gitee.io/2019/06/13/linuxwifi/</a>
+    <a href="https://ww2000e.gitee.io/2019/07/02/bash后台运行不提示/" title="bash后台运行不提示进程号">https://ww2000e.gitee.io/2019/07/02/bash后台运行不提示/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -627,7 +650,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/shell/" rel="tag"># shell</a>
+          
+            <a href="/tags/bash/" rel="tag"># bash</a>
+          
+            <a href="/tags/zsh/" rel="tag"># zsh</a>
           
         </div>
       
@@ -640,8 +667,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/27/vim-plugin-note/" rel="next" title="vim插件安装使用整理记录">
-                <i class="fa fa-chevron-left"></i> vim插件安装使用整理记录
+              <a href="/2019/06/13/linuxwifi/" rel="next" title="linux只能搜索到部分无线网问题解决">
+                <i class="fa fa-chevron-left"></i> linux只能搜索到部分无线网问题解决
               </a>
             
           </div>
@@ -649,10 +676,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/02/bash后台运行不提示/" rel="prev" title="bash后台运行不提示进程号">
-                bash后台运行不提示进程号 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
