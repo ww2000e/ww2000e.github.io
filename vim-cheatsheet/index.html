@@ -4,98 +4,54 @@
 
 
 
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
 
-
-
-
-
-
-
-
-
-
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
-
-
-
-
-
-
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
-
-
-
-
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
-
-
-
-
-
-
-<script id="hexo.configurations">
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
-    version: '7.2.0',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
     lazyload: false,
     pangu: false,
     algolia: {
-      applicationID: '',
+      appID: '',
       apiKey: '',
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":1,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    search: {
-      root: '/',
-      path: 'search.xml'
-    },
-    tabs: true,
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: '复制',
       copy_success: '复制成功',
       copy_failure: '复制失败'
-    }
+    },
+    sidebarPadding: 40
   };
 </script>
 
@@ -107,34 +63,26 @@
 <meta property="og:site_name" content="KEEP CALM AND LEARN ON">
 <meta property="og:description" content="无插件vim使用vim快捷键~/.vimrc配置123456789101112131415161718192021222324252627282930set numberset cc=80set cursorlineset history=2000set tabstop=4set shiftwidth=4set expandtabset softtabstop=2syntax onfiletype">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-29T07:58:05.681Z">
+<meta property="og:updated_time" content="2019-10-10T01:44:00.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vim Cheatsheet">
 <meta name="twitter:description" content="无插件vim使用vim快捷键~/.vimrc配置123456789101112131415161718192021222324252627282930set numberset cc=80set cursorlineset history=2000set tabstop=4set shiftwidth=4set expandtabset softtabstop=2syntax onfiletype">
-
-
-
-
-
-  
-  
   <link rel="canonical" href="https://ww2000e.gitee.io/vim-cheatsheet/">
 
 
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome: false,
+    isPost: false,
+    isPage: true,
+    isArchive: false
   };
 </script>
 
-  
   <title>Vim Cheatsheet | KEEP CALM AND LEARN ON</title>
   
-
-
-
-
 
 
   <script>
@@ -152,10 +100,8 @@
 
 
 
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -164,7 +110,7 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
   .use-motion .logo,
   .use-motion .site-title,
@@ -181,33 +127,22 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container use-motion">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+      <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
-    
 
-    <div class="custom-logo-site-title">
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">KEEP CALM AND LEARN ON</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
+        <h1 class="site-subtitle" itemprop="description">合肥it🐕</h1>
       
-        <p class="site-subtitle">合肥it🐕</p>
-      
-    
-    
   </div>
 
   <div class="site-nav-toggle">
@@ -220,261 +155,211 @@
 </div>
 
 
-
 <nav class="site-nav">
   
-    <ul id="menu" class="menu">
+  <ul id="menu" class="menu">
+      
+      
       
         
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
+        <li class="menu-item menu-item-home">
       
     
 
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+      
+      
+      
         
-        
-        
-          
-          <li class="menu-item menu-item-todo">
-
-    
-    
+        <li class="menu-item menu-item-todo">
       
     
 
-    
-
-    <a href="/Todo/" rel="section"><i class="menu-item-icon fa fa-fw fa-check-square"></i> <br>Todo</a>
+    <a href="/Todo/" rel="section"><i class="fa fa-fw fa-check-square"></i>Todo</a>
 
   </li>
+      
+      
+      
         
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-
-    
-    
+        <li class="menu-item menu-item-tags">
       
     
 
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
+      
+      
+      
         
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
+        <li class="menu-item menu-item-categories">
       
     
 
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
+      
+      
+      
         
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
+        <li class="menu-item menu-item-archives">
       
     
 
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
+      
+      
+      
         
-        
-        
-          
-          <li class="menu-item menu-item-开源杂烩">
-
-    
-    
+        <li class="menu-item menu-item-开源杂烩">
       
     
 
-    
-
-    <a href="/opensource-collection/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>开源杂烩</a>
+    <a href="/opensource-collection/" rel="section"><i class="fa fa-fw fa-book"></i>开源杂烩</a>
 
   </li>
+      
+      
+      
         
-        
-        
-          
-          <li class="menu-item menu-item-hexo-cheatsheet">
-
-    
-    
+        <li class="menu-item menu-item-hexo-cheatsheet">
       
     
 
-    
-
-    <a href="/Hexo-Cheatsheet/" rel="section"><i class="menu-item-icon fa fa-fw fa-blind"></i> <br>HEXO Cheatsheet</a>
+    <a href="/Hexo-Cheatsheet/" rel="section"><i class="fa fa-fw fa-blind"></i>HEXO Cheatsheet</a>
 
   </li>
+      
+      
+      
         
-        
-        
-          
-          <li class="menu-item menu-item-vim-cheatsheet menu-item-active">
-
-    
-    
+        <li class="menu-item menu-item-vim-cheatsheet">
       
     
 
-    
-
-    <a href="/vim-cheatsheet/" rel="section"><i class="menu-item-icon fa fa-fw fa-blind"></i> <br>Vim Cheatsheet</a>
+    <a href="/vim-cheatsheet/" rel="section"><i class="fa fa-fw fa-blind"></i>Vim Cheatsheet</a>
 
   </li>
+      
+      
+      
         
-        
-        
-          
-          <li class="menu-item menu-item-vimium-cheatsheet">
-
-    
-    
+        <li class="menu-item menu-item-tmux-cheatsheet">
       
     
 
-    
-
-    <a href="/vimium-cheatsheet/" rel="section"><i class="menu-item-icon fa fa-fw fa-blind"></i> <br>vimium Cheatsheet</a>
+    <a href="/tmux-cheatsheet/" rel="section"><i class="fa fa-fw fa-blind"></i>Tmux Cheatsheet</a>
 
   </li>
+      
+      
+      
         
-        
-        
-          
-          <li class="menu-item menu-item-王摸摸">
-
-    
-    
+        <li class="menu-item menu-item-vimium-cheatsheet">
       
     
 
-    
-
-    <a href="/王摸摸/" rel="section"><i class="menu-item-icon fa fa-fw fa-bomb"></i> <br>王摸摸</a>
+    <a href="/vimium-cheatsheet/" rel="section"><i class="fa fa-fw fa-blind"></i>vimium Cheatsheet</a>
 
   </li>
-
       
       
-        <li class="menu-item menu-item-search">
-          <a href="javascript:;" class="popup-trigger">
-          
-            <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
       
-    </ul>
-  
-
-  
-
-  
-    <div class="site-search">
+        
+        <li class="menu-item menu-item-王摸摸">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
+    
 
+    <a href="/王摸摸/" rel="section"><i class="fa fa-fw fa-bomb"></i>王摸摸</a>
 
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
 
-    </div>
-  
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
 
+</div>
+<div class="search-pop-overlay"></div>
 
-
+  </div>
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
             
 
+  
     
     
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
+  
     
     
-
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
   
 
-
-          
           <div id="content" class="content">
             
 
@@ -485,15 +370,12 @@
     <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">Vim Cheatsheet
+<h2 class="post-title" itemprop="name headline">Vim Cheatsheet
 
-</h1>
+</h2>
 
 <div class="post-meta">
   
-  
-
-
 
 </div>
 
@@ -503,7 +385,6 @@
       
       
       <div class="post-body">
-        
         
           <h2 id="无插件vim使用"><a href="#无插件vim使用" class="headerlink" title="无插件vim使用"></a>无插件vim使用</h2><h3 id="vim快捷键"><a href="#vim快捷键" class="headerlink" title="vim快捷键"></a>vim快捷键</h3><h4 id="vimrc配置"><a href="#vimrc配置" class="headerlink" title="~/.vimrc配置"></a>~/.vimrc配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">set number</span><br><span class="line"></span><br><span class="line">set cc=80</span><br><span class="line"></span><br><span class="line">set cursorline</span><br><span class="line"></span><br><span class="line">set history=2000</span><br><span class="line"></span><br><span class="line">set tabstop=4</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set expandtab</span><br><span class="line">set softtabstop=2</span><br><span class="line">syntax on</span><br><span class="line">filetype indent on</span><br><span class="line"></span><br><span class="line">set laststatus=2</span><br><span class="line"></span><br><span class="line">set showmatch</span><br><span class="line">set hlsearch</span><br><span class="line"></span><br><span class="line">set undofile</span><br><span class="line">set backupdir=~/.vim/.backup//</span><br><span class="line">set directory=~/.vim/.swp//</span><br><span class="line">set undodir=~/.vim/.undo//</span><br><span class="line"></span><br><span class="line">set visualbell</span><br><span class="line">                              </span><br><span class="line">set autoread</span><br><span class="line"></span><br><span class="line">set statusline=%t[%&#123;strlen(&amp;fenc)?&amp;fenc:&apos;none&apos;&#125;,%&#123;&amp;ff&#125;]%h%m%r%y%=%c,%l/%L\ %P</span><br></pre></td></tr></table></figure>
 <h4 id="方向移动"><a href="#方向移动" class="headerlink" title="方向移动"></a>方向移动</h4><table>
@@ -567,20 +448,42 @@
 <td>文件头部/尾部</td>
 </tr>
 <tr>
-<td>crtl+f, ctrl+b</td>
+<td><span class="label info">ctrl+f</span>, <span class="label info">ctrl+b</span></td>
 <td>上/下翻一屏</td>
 </tr>
 <tr>
-<td>ctrl+d, ctrl+u</td>
+<td><span class="label info">ctrl+d</span>, <span class="label info">ctrl+u</span></td>
 <td>上/下翻半屏</td>
 </tr>
 <tr>
-<td>ctrl+e, ctrl+y</td>
+<td><span class="label info">ctrl+e</span>, <span class="label info">ctrl+y</span></td>
 <td>上/下滚动一行</td>
 </tr>
 <tr>
 <td>zz, zt, zb</td>
 <td>当前行移动到屏幕中间/顶端/底端</td>
+</tr>
+</tbody>
+</table>
+<h4 id="插入状态下操作"><a href="#插入状态下操作" class="headerlink" title="插入状态下操作"></a>插入状态下操作</h4><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="label info">ctrl+h</span></td>
+<td>删除前一个字符(退格键)</td>
+</tr>
+<tr>
+<td><span class="label info">ctrl+r</span>, 0</td>
+<td>粘贴寄存器0内容</td>
+</tr>
+<tr>
+<td><span class="label info">ctrl+r</span>, <span class="label info">ctrl+p</span>, 0</td>
+<td>粘贴寄存器0内容，更加智能</td>
 </tr>
 </tbody>
 </table>
@@ -617,19 +520,19 @@
 <td>开头第一个字符处插入</td>
 </tr>
 <tr>
-<td>ctrl+[</td>
+<td><span class="label info">ctrl+[</span></td>
 <td>回到普通模式</td>
 </tr>
 <tr>
-<td>ctrl+d</td>
+<td><span class="label info">ctrl+d</span></td>
 <td>命令模式自动补全</td>
 </tr>
 <tr>
-<td>ctrl+r ctrl+w</td>
+<td><span class="label info">ctrl+r</span> <span class="label info">ctrl+w</span></td>
 <td>当前单词粘贴到命令行</td>
 </tr>
 <tr>
-<td>ctrl+w s,v</td>
+<td><span class="label info">ctrl+w</span> s,v</td>
 <td>水平 ，垂直分隔</td>
 </tr>
 <tr>
@@ -672,11 +575,11 @@
 </tr>
 <tr>
 <td>:tabn</td>
-<td>切换到下一个标签。ctrl + PageDown，也可以</td>
+<td>切换到下一个标签。<span class="label info">ctrl+PageDown</span>，也可以</td>
 </tr>
 <tr>
 <td>:tabp</td>
-<td>切换到上一个标签。ctrl + PageUp，也可以</td>
+<td>切换到上一个标签。<span class="label info">ctrl+PageUp</span>，也可以</td>
 </tr>
 <tr>
 <td>[n] gt</td>
@@ -726,7 +629,7 @@
 </tr>
 <tr>
 <td>:sp[lit]</td>
-<td>把当前窗水平分割成两个窗口。(CTRL-W s 或 CTRL-W CTRL-S) 注意如果在终端下，CTRL-S可能会冻结终端，请按CTRL-Q继续</td>
+<td>把当前窗水平分割成两个窗口。(<span class="label info">ctrl+W</span> s 或 <span class="label info">ctrl+W</span> <span class="label info">ctrl+S</span>) 注意如果在终端下，<span class="label info">ctrl+S</span>可能会冻结终端，请按<span class="label info">ctrl+Q</span>继续</td>
 </tr>
 <tr>
 <td>:vsplit</td>
@@ -742,14 +645,14 @@
 </tr>
 <tr>
 <td>:[N]new</td>
-<td>水平分割出一个N行高的窗口，并编辑一个新文件。 (CTRL-W n或 CTRL-W CTRL-N)</td>
+<td>水平分割出一个N行高的窗口，并编辑一个新文件。 (<span class="label info">ctrl+W</span> n或 <span class="label info">ctrl+W</span> <span class="label info">ctrl+N</span>)</td>
 </tr>
 <tr>
-<td>ctrl+w f</td>
+<td><span class="label info">ctrl+w</span> f</td>
 <td>水平分割出一个窗口，并在新窗口打开名称为光标所在词的文件</td>
 </tr>
 <tr>
-<td>C-w C-^</td>
+<td><span class="label info">ctrl+w</span> <span class="label info">ctrl+^</span></td>
 <td>水平分割一个窗口，打开刚才编辑的文件</td>
 </tr>
 <tr>
@@ -780,11 +683,11 @@
 </tr>
 <tr>
 <td>:only</td>
-<td>只保留当前窗口，关闭其它窗口。(CTRL-W o)</td>
+<td>只保留当前窗口，关闭其它窗口。(<span class="label info">ctrl+W</span>o)</td>
 </tr>
 <tr>
 <td>:close</td>
-<td>关闭当前窗口，CTRL-W c能实现同样的功能。 (象 :q :x同样工作 )</td>
+<td>关闭当前窗口，<span class="label info">ctrl+W</span> c能实现同样的功能。 (象 :q :x同样工作 )</td>
 </tr>
 </tbody>
 </table>
@@ -797,15 +700,15 @@
 </thead>
 <tbody>
 <tr>
-<td>ctrl+W +</td>
+<td><span class="label info">ctrl+W</span> +</td>
 <td>当前窗口增高一行。也可以用n增高n行</td>
 </tr>
 <tr>
-<td>ctrl+W -</td>
+<td><span class="label info">ctrl+W</span> -</td>
 <td>当前窗口减小一行。也可以用n减小n行</td>
 </tr>
 <tr>
-<td>ctrl+W _</td>
+<td><span class="label info">ctrl+W</span> _</td>
 <td>当前窗口扩展到尽可能的大。也可以用n设定行数</td>
 </tr>
 <tr>
@@ -813,23 +716,23 @@
 <td>当前窗口n行高</td>
 </tr>
 <tr>
-<td>ctrl+W =</td>
+<td><span class="label info">ctrl+W</span> =</td>
 <td>所有窗口同样高度</td>
 </tr>
 <tr>
-<td>n ctrl+W _</td>
+<td>n <span class="label info">ctrl+W</span> _</td>
 <td>当前窗口的高度设定为n行</td>
 </tr>
 <tr>
-<td>ctrl+W &lt;</td>
+<td><span class="label info">ctrl+W</span> &lt;</td>
 <td>当前窗口减少一列。也可以用n减少n列</td>
 </tr>
 <tr>
-<td>ctrl+W &gt;</td>
+<td><span class="label info">ctrl+W</span> &gt;</td>
 <td>当前窗口增宽一列。也可以用n增宽n列</td>
 </tr>
 <tr>
-<td>ctrl+W &#124;</td>
+<td><span class="label info">ctrl+W</span> &#124;</td>
 <td>当前窗口尽可能的宽。也可以用n设定列数</td>
 </tr>
 </tbody>
@@ -843,31 +746,31 @@
 </thead>
 <tbody>
 <tr>
-<td>ctrl+w ctrl+w</td>
-<td>切换到下一个窗口。或者是ctrl+w w</td>
+<td><span class="label info">ctrl+w</span> <span class="label info">ctrl+w</span></td>
+<td>切换到下一个窗口。或者是<span class="label info">ctrl+w</span> w</td>
 </tr>
 <tr>
-<td>ctrl+w p</td>
+<td><span class="label info">ctrl+w</span> p</td>
 <td>切换到前一个窗口</td>
 </tr>
 <tr>
-<td>ctrl+w h(l,j,k)</td>
+<td><span class="label info">ctrl+w</span> h(l,j,k)</td>
 <td>切换到左（右，下，上）的窗口</td>
 </tr>
 <tr>
-<td>ctrl+w t(b)</td>
+<td><span class="label info">ctrl+w</span> t(b)</td>
 <td>切换到最上（下）面的窗口</td>
 </tr>
 <tr>
-<td>ctrl+w H(L,K,J)</td>
+<td><span class="label info">ctrl+w</span> H(L,K,J)</td>
 <td>将当前窗口移动到最左（右、上、下）面</td>
 </tr>
 <tr>
-<td>ctrl+w r</td>
+<td><span class="label info">ctrl+w</span> r</td>
 <td>旋转窗口的位置</td>
 </tr>
 <tr>
-<td>ctrl+w T</td>
+<td><span class="label info">ctrl+w</span> T</td>
 <td>将当前的窗口移动到新的标签页上</td>
 </tr>
 </tbody>
@@ -881,11 +784,11 @@
 </thead>
 <tbody>
 <tr>
-<td>ctrl+n</td>
-<td>当你输入第一个字母的时候，再CTRL+n，自动出现下拉菜单，单词默认选中第一个，继续CTRL+n，CTRL+p可以上下切换，或者用方向键（太慢）</td>
+<td><span class="label info">ctrl+n</span></td>
+<td>当你输入第一个字母的时候，再<span class="label info">ctrl+n</span>，自动出现下拉菜单，单词默认选中第一个，继续<span class="label info">ctrl+n</span>，<span class="label info">ctrl+p</span>可以上下切换，或者用方向键（太慢）</td>
 </tr>
 <tr>
-<td>ctrl+p</td>
+<td><span class="label info">ctrl+p</span></td>
 <td>同上，只是默认的选中的是列表中最后一个单词</td>
 </tr>
 </tbody>
@@ -899,7 +802,7 @@
 </thead>
 <tbody>
 <tr>
-<td>ctrl+x ctrl+l</td>
+<td><span class="label info">ctrl+x</span> <span class="label info">ctrl+l</span></td>
 <td>两个命令组合使用。在插入模式下输入已经存在行的第一个单词，再按这两个键，就会列出该整行出来</td>
 </tr>
 </tbody>
@@ -913,7 +816,7 @@
 </thead>
 <tbody>
 <tr>
-<td>ctrl+x ctrl+f</td>
+<td><span class="label info">ctrl+x</span> <span class="label info">ctrl+f</span></td>
 <td>插入模式下，按这两个组合键，可以插入当前目录下的文件名。处用在哪里呢，当然是有时候我们要指定默认执行文件的路径，这样就方便啦</td>
 </tr>
 </tbody>
@@ -971,7 +874,7 @@
 <td>垂直打开选择的文件</td>
 </tr>
 <tr>
-<td>ctrl+^</td>
+<td><span class="label info">ctrl+^</span></td>
 <td>目录和文件间切换</td>
 </tr>
 </tbody>
@@ -1068,14 +971,14 @@
 </tr>
 <tr>
 <td>跳转窗口</td>
-<td>ctrl-w,w</td>
+<td><span class="label info">ctrl+w</span>,w</td>
 </tr>
 </tbody>
 </table>
 <h3 id="打开压缩文件编辑"><a href="#打开压缩文件编辑" class="headerlink" title="打开压缩文件编辑"></a>打开压缩文件编辑</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim archive.tar.gz</span><br></pre></td></tr></table></figure>
 <p>支持tar.gz., tgz, zip, jar等</p>
 <h3 id="编辑远程文件"><a href="#编辑远程文件" class="headerlink" title="编辑远程文件"></a>编辑远程文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim scp://user@myserver[:port]//path/to/file.txt</span><br></pre></td></tr></table></figure>
-<h3 id="纵向批量编辑"><a href="#纵向批量编辑" class="headerlink" title="纵向批量编辑"></a>纵向批量编辑</h3><p>ctrl-v 进入纵向编辑模式<br>G 移动游标到最后一行，可视块覆盖所要修改的列<br>r 进入修改模式</p>
+<h3 id="纵向批量编辑"><a href="#纵向批量编辑" class="headerlink" title="纵向批量编辑"></a>纵向批量编辑</h3><p><span class="label info">ctrl+v</span> 进入纵向编辑模式<br>G 移动游标到最后一行，可视块覆盖所要修改的列<br>r 进入修改模式</p>
 <h2 id="带插件使用vim"><a href="#带插件使用vim" class="headerlink" title="带插件使用vim"></a>带插件使用vim</h2><p><a href="/2019/03/27/vim-plugin-note/" title="点击这里查看带插件使用vim">点击这里查看带插件使用vim</a>/</p>
 
         
@@ -1086,8 +989,6 @@
     </div>
     
 
-
-
     
     
     
@@ -1096,15 +997,11 @@
 
           </div>
           
-  
     
     <div class="comments" id="gitalk-container"></div>
   
 
-
-
         </div>
-        
           
   
   <div class="sidebar-toggle">
@@ -1115,36 +1012,40 @@
     </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
-
+        
+        
+        
+        
       
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#无插件vim使用"><span class="nav-number">1.</span> <span class="nav-text">无插件vim使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vim快捷键"><span class="nav-number">1.1.</span> <span class="nav-text">vim快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vimrc配置"><span class="nav-number">1.1.1.</span> <span class="nav-text">~/.vimrc配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方向移动"><span class="nav-number">1.1.2.</span> <span class="nav-text">方向移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入状态下操作"><span class="nav-number">1.1.3.</span> <span class="nav-text">插入状态下操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作"><span class="nav-number">1.1.4.</span> <span class="nav-text">操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多标签编辑"><span class="nav-number">1.1.5.</span> <span class="nav-text">多标签编辑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分屏"><span class="nav-number">1.1.6.</span> <span class="nav-text">分屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭多个窗口"><span class="nav-number">1.1.7.</span> <span class="nav-text">关闭多个窗口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调整窗口大小"><span class="nav-number">1.1.8.</span> <span class="nav-text">调整窗口大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切换移动窗口"><span class="nav-number">1.1.9.</span> <span class="nav-text">切换移动窗口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动补全"><span class="nav-number">1.1.10.</span> <span class="nav-text">自动补全</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#单词自动补全"><span class="nav-number">1.1.10.1.</span> <span class="nav-text">单词自动补全</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#行自动补全"><span class="nav-number">1.1.10.2.</span> <span class="nav-text">行自动补全</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文件名自动补全"><span class="nav-number">1.1.10.3.</span> <span class="nav-text">文件名自动补全</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文件浏览"><span class="nav-number">1.1.10.4.</span> <span class="nav-text">文件浏览</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vimgrep"><span class="nav-number">1.1.11.</span> <span class="nav-text">vimgrep</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vimdiff快捷键"><span class="nav-number">1.2.</span> <span class="nav-text">vimdiff快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开压缩文件编辑"><span class="nav-number">1.3.</span> <span class="nav-text">打开压缩文件编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑远程文件"><span class="nav-number">1.4.</span> <span class="nav-text">编辑远程文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#纵向批量编辑"><span class="nav-number">1.5.</span> <span class="nav-text">纵向批量编辑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带插件使用vim"><span class="nav-number">2.</span> <span class="nav-text">带插件使用vim</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  
-    <img class="site-author-image" itemprop="image" src="/images/touxiang.png" alt="ww2000e">
-  
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/touxiang.png"
+      alt="ww2000e">
   <p class="site-author-name" itemprop="name">ww2000e</p>
-  <div class="site-description motion-element" itemprop="description">拖延症患者自救工具</div>
+  <div class="site-description" itemprop="description">拖延症患者自救工具</div>
 </div>
-
-
-  <nav class="site-state motion-element">
-    
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
         
           <a href="/archives/">
@@ -1154,8 +1055,6 @@
         </a>
       </div>
     
-
-    
       
       
       <div class="site-state-item site-state-categories">
@@ -1164,42 +1063,10 @@
             <a href="/categories/">
           
         
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
-    
-
     
       
       
@@ -1209,71 +1076,14 @@
             <a href="/tags/">
           
         
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
     
   </nav>
-
-
-
-
-
-
-
+</div>
   <div class="links-of-author motion-element">
-    
       <span class="links-of-author-item">
       
       
@@ -1297,100 +1107,51 @@
       </span>
     
   </div>
-
-
-
   <div class="cc-license motion-element" itemprop="license">
-  
-  
     
-  
-  
   
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
 
-
-
-          
-          
-        </div>
       </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#无插件vim使用"><span class="nav-number">1.</span> <span class="nav-text">无插件vim使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vim快捷键"><span class="nav-number">1.1.</span> <span class="nav-text">vim快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vimrc配置"><span class="nav-number">1.1.1.</span> <span class="nav-text">~/.vimrc配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方向移动"><span class="nav-number">1.1.2.</span> <span class="nav-text">方向移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作"><span class="nav-number">1.1.3.</span> <span class="nav-text">操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多标签编辑"><span class="nav-number">1.1.4.</span> <span class="nav-text">多标签编辑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分屏"><span class="nav-number">1.1.5.</span> <span class="nav-text">分屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭多个窗口"><span class="nav-number">1.1.6.</span> <span class="nav-text">关闭多个窗口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调整窗口大小"><span class="nav-number">1.1.7.</span> <span class="nav-text">调整窗口大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切换移动窗口"><span class="nav-number">1.1.8.</span> <span class="nav-text">切换移动窗口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动补全"><span class="nav-number">1.1.9.</span> <span class="nav-text">自动补全</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#单词自动补全"><span class="nav-number">1.1.9.1.</span> <span class="nav-text">单词自动补全</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#行自动补全"><span class="nav-number">1.1.9.2.</span> <span class="nav-text">行自动补全</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文件名自动补全"><span class="nav-number">1.1.9.3.</span> <span class="nav-text">文件名自动补全</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文件浏览"><span class="nav-number">1.1.9.4.</span> <span class="nav-text">文件浏览</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vimgrep"><span class="nav-number">1.1.10.</span> <span class="nav-text">vimgrep</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vimdiff快捷键"><span class="nav-number">1.2.</span> <span class="nav-text">vimdiff快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开压缩文件编辑"><span class="nav-number">1.3.</span> <span class="nav-text">打开压缩文件编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑远程文件"><span class="nav-number">1.4.</span> <span class="nav-text">编辑远程文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#纵向批量编辑"><span class="nav-number">1.5.</span> <span class="nav-text">纵向批量编辑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带插件使用vim"><span class="nav-number">2.</span> <span class="nav-text">带插件使用vim</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
 
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">ww2000e</span>
-
-  
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    
-    <span title="站点总字数">68k</span>
-  
-
-  
+    <span title="站点总字数">69k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    
     <span title="站点阅读时长">1:02</span>
-  
 </div>
-
-
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-
-
-
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
-
-
-
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.0</div>
 
         
+
+
+
+
 
 
 
@@ -1402,103 +1163,28 @@
         
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-
   </div>
 
   
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=3.4.1"></script>
-
-  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-
-
-  <script src="/js/utils.js?v=7.2.0"></script>
-
-  <script src="/js/motion.js?v=7.2.0"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
 
 
 
   
-  
-
-
-  <script src="/js/affix.js?v=7.2.0"></script>
-
-  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.2.0"></script>
-<script src="/js/post-details.js?v=7.2.0"></script>
-
-
-
-  <script src="/js/next-boot.js?v=7.2.0"></script>
-
-  
-
-  
-
-  
-
-
-  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1507,36 +1193,13 @@
 
 
 
-
-
-
-
-
-  <script src="/js/local-search.js?v=7.2.0"></script>
-
+  <script src="/js/local-search.js?v=7.4.0"></script>
 
 
 
 
 
 
-
-
-
-
-
-<script>
-// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
-
-window.addEventListener("message", function(e) {
-  var data = e.data;
-  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
-    var featureID = data.split(':')[1];
-    var height = data.split(':')[2];
-    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
-  }
-}, false);
-</script>
 
 
 
@@ -1546,37 +1209,29 @@ window.addEventListener("message", function(e) {
 
 
   
-    
 
+  
 
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-
-
+  
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
-
-
-<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
-
 <script>
-  var gitalk = new Gitalk({
-    clientID: 'b7a13be5b14a5e68a713',
-    clientSecret: 'b2ac15e746a5a65fb7b05057b21c7df0d550b8c2',
-    repo: 'ww2000e',
-    owner: 'ww2000e',
-    admin: ['ww2000e'],
-    id: md5(location.pathname),
-    
-      language: window.navigator.language || window.navigator.userLanguage,
-    
-    distractionFreeMode: 'true'
-  });
-  gitalk.render('gitalk-container');
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'b7a13be5b14a5e68a713',
+      clientSecret: 'b2ac15e746a5a65fb7b05057b21c7df0d550b8c2',
+      repo: 'ww2000e',
+      owner: 'ww2000e',
+      admin: ['ww2000e'],
+      id: '71a9d2c209f324419db67cd5c75e9a8d',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
 </script>
 
-
-  
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 </html>

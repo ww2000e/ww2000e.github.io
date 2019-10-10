@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="无配置使用tmuxtmux快捷键             ctrl+b 进入指令模式? 查看帮助            tmux进程/会话 操作   ctrl+b后按键 功能     d 后台运行当前tmux进程, 执行tmux attach恢复   ctrl+z 暂停当前tmux进程至后台, 执行fg或者tmux attach恢复   $ 重命名当前会话   (    ) 选择上一个/下一个 t">
+<meta name="keywords" content="合肥,合肥it,合肥程序员">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tmux Cheatsheet">
+<meta property="og:url" content="https://ww2000e.gitee.io/tmux-cheatsheet/index.html">
+<meta property="og:site_name" content="KEEP CALM AND LEARN ON">
+<meta property="og:description" content="无配置使用tmuxtmux快捷键             ctrl+b 进入指令模式? 查看帮助            tmux进程/会话 操作   ctrl+b后按键 功能     d 后台运行当前tmux进程, 执行tmux attach恢复   ctrl+z 暂停当前tmux进程至后台, 执行fg或者tmux attach恢复   $ 重命名当前会话   (    ) 选择上一个/下一个 t">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-10T01:44:00.490Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tmux Cheatsheet">
+<meta name="twitter:description" content="无配置使用tmuxtmux快捷键             ctrl+b 进入指令模式? 查看帮助            tmux进程/会话 操作   ctrl+b后按键 功能     d 后台运行当前tmux进程, 执行tmux attach恢复   ctrl+z 暂停当前tmux进程至后台, 执行fg或者tmux attach恢复   $ 重命名当前会话   (    ) 选择上一个/下一个 t">
+  <link rel="canonical" href="https://ww2000e.gitee.io/tmux-cheatsheet/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: false,
+    isPage: true,
+    isArchive: false
+  };
+</script>
+
+  <title>Tmux Cheatsheet | KEEP CALM AND LEARN ON</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?62ca4323084bc67eb5bd92981fa06262";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">KEEP CALM AND LEARN ON</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">合肥it🐕</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-todo">
+      
+    
+
+    <a href="/Todo/" rel="section"><i class="fa fa-fw fa-check-square"></i>Todo</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-开源杂烩">
+      
+    
+
+    <a href="/opensource-collection/" rel="section"><i class="fa fa-fw fa-book"></i>开源杂烩</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-hexo-cheatsheet">
+      
+    
+
+    <a href="/Hexo-Cheatsheet/" rel="section"><i class="fa fa-fw fa-blind"></i>HEXO Cheatsheet</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-vim-cheatsheet">
+      
+    
+
+    <a href="/vim-cheatsheet/" rel="section"><i class="fa fa-fw fa-blind"></i>Vim Cheatsheet</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tmux-cheatsheet">
+      
+    
+
+    <a href="/tmux-cheatsheet/" rel="section"><i class="fa fa-fw fa-blind"></i>Tmux Cheatsheet</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-vimium-cheatsheet">
+      
+    
+
+    <a href="/vimium-cheatsheet/" rel="section"><i class="fa fa-fw fa-blind"></i>vimium Cheatsheet</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-王摸摸">
+      
+    
+
+    <a href="/王摸摸/" rel="section"><i class="fa fa-fw fa-bomb"></i>王摸摸</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+<h2 class="post-title" itemprop="name headline">Tmux Cheatsheet
+
+</h2>
+
+<div class="post-meta">
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+          <h2 id="无配置使用tmux"><a href="#无配置使用tmux" class="headerlink" title="无配置使用tmux"></a>无配置使用tmux</h2><h3 id="tmux快捷键"><a href="#tmux快捷键" class="headerlink" title="tmux快捷键"></a>tmux快捷键</h3><div class="note info">
+            <p>ctrl+b 进入指令模式<br>? 查看帮助</p>
+          </div>
+<h4 id="tmux进程-会话-操作"><a href="#tmux进程-会话-操作" class="headerlink" title="tmux进程/会话 操作"></a>tmux进程/会话 操作</h4><table>
+<thead>
+<tr>
+<th>ctrl+b后按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d</td>
+<td>后台运行当前tmux进程, 执行tmux attach恢复</td>
+</tr>
+<tr>
+<td>ctrl+z</td>
+<td>暂停当前tmux进程至后台, 执行fg或者tmux attach恢复</td>
+</tr>
+<tr>
+<td>$</td>
+<td>重命名当前会话</td>
+</tr>
+<tr>
+<td>(    )</td>
+<td>选择上一个/下一个 tmux进程</td>
+</tr>
+<tr>
+<td>D</td>
+<td>选择一个tmux进程</td>
+</tr>
+<tr>
+<td>L</td>
+<td>切换tmux进程</td>
+</tr>
+<tr>
+<td>r</td>
+<td>刷新tmux</td>
+</tr>
+</tbody>
+</table>
+<h4 id="窗口操作"><a href="#窗口操作" class="headerlink" title="窗口操作"></a>窗口操作</h4><table>
+<thead>
+<tr>
+<th>ctrl+b后按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c</td>
+<td>新建窗口</td>
+</tr>
+<tr>
+<td>“</td>
+<td>水平分割窗口</td>
+</tr>
+<tr>
+<td>%</td>
+<td>垂直分割窗口</td>
+</tr>
+<tr>
+<td>!</td>
+<td>当前窗格新建一个窗口</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>关闭当前窗口</td>
+</tr>
+<tr>
+<td>‘</td>
+<td>输入窗口号选择窗口</td>
+</tr>
+<tr>
+<td>,</td>
+<td>重命名当前窗口</td>
+</tr>
+<tr>
+<td>.</td>
+<td>指定当前窗口一个新的序号</td>
+</tr>
+<tr>
+<td>0 ~ 9</td>
+<td>按数字键选择窗口</td>
+</tr>
+<tr>
+<td>w</td>
+<td>选择窗口</td>
+</tr>
+<tr>
+<td>f</td>
+<td>查找窗口</td>
+</tr>
+<tr>
+<td>l</td>
+<td>最后一个窗口</td>
+</tr>
+<tr>
+<td>n</td>
+<td>下一个窗口</td>
+</tr>
+<tr>
+<td>p</td>
+<td>上一个窗口</td>
+</tr>
+</tbody>
+</table>
+<h4 id="窗格操作"><a href="#窗格操作" class="headerlink" title="窗格操作"></a>窗格操作</h4><table>
+<thead>
+<tr>
+<th>ctrl+b后按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctrl+o</td>
+<td>逆时针旋转当前窗口中窗格</td>
+</tr>
+<tr>
+<td>space</td>
+<td>当前窗口中窗格下一个布局</td>
+</tr>
+<tr>
+<td>;</td>
+<td>选择最后的窗格</td>
+</tr>
+<tr>
+<td>[</td>
+<td>复制模式</td>
+</tr>
+<tr>
+<td>ctrl+space</td>
+<td>默认emacs模式，复制模式中开始选择</td>
+</tr>
+<tr>
+<td>alt+w</td>
+<td>默认emacs模式，复制模式中选择完成</td>
+</tr>
+<tr>
+<td>]</td>
+<td>粘贴模式</td>
+</tr>
+<tr>
+<td>i</td>
+<td>显示当前窗格信息</td>
+</tr>
+<tr>
+<td>o</td>
+<td>切换到下一个窗格</td>
+</tr>
+<tr>
+<td>q</td>
+<td>显示窗格标号</td>
+</tr>
+<tr>
+<td>s</td>
+<td>窗格树中选择窗格</td>
+</tr>
+<tr>
+<td>t</td>
+<td>整个窗格显示时间</td>
+</tr>
+<tr>
+<td>x</td>
+<td>关闭当前窗格</td>
+</tr>
+<tr>
+<td>z</td>
+<td>开关显示当前窗格</td>
+</tr>
+<tr>
+<td>{    }</td>
+<td>交换当前窗格</td>
+</tr>
+<tr>
+<td>方向键Up</td>
+<td>选择上边窗格</td>
+</tr>
+<tr>
+<td>方向键Down</td>
+<td>选择下边窗格</td>
+</tr>
+<tr>
+<td>方向键Left</td>
+<td>选择左边窗格</td>
+</tr>
+<tr>
+<td>方向键Right</td>
+<td>选择右边窗格</td>
+</tr>
+<tr>
+<td>alt+1</td>
+<td>所有窗格变为垂直分割</td>
+</tr>
+<tr>
+<td>alt+2</td>
+<td>所有窗格变为水平分割</td>
+</tr>
+<tr>
+<td>alt+3</td>
+<td>一个主要水平分割窗格，其他垂直分割</td>
+</tr>
+<tr>
+<td>alt+4</td>
+<td>一个主要垂直分割窗格，其他水平分割</td>
+</tr>
+<tr>
+<td>alt+5</td>
+<td>均与分割所有窗格</td>
+</tr>
+<tr>
+<td>alt+o</td>
+<td>旋转当前窗口中的窗格</td>
+</tr>
+<tr>
+<td>alt+方向键</td>
+<td>改变窗格大小</td>
+</tr>
+<tr>
+<td>ctrl+方向键</td>
+<td>微调当前窗格大小</td>
+</tr>
+</tbody>
+</table>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><table>
+<thead>
+<tr>
+<th>ctrl+b后按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:</td>
+<td>命令行</td>
+</tr>
+<tr>
+<td>#</td>
+<td>list buffers</td>
+</tr>
+<tr>
+<td>-</td>
+<td>delete-buffer</td>
+</tr>
+<tr>
+<td>=</td>
+<td>choose buffer</td>
+</tr>
+<tr>
+<td>~</td>
+<td>show messages</td>
+</tr>
+<tr>
+<td>alt+n</td>
+<td>next-window</td>
+</tr>
+<tr>
+<td>alt+p</td>
+<td>previous-window</td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="gitalk-container"></div>
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#无配置使用tmux"><span class="nav-number">1.</span> <span class="nav-text">无配置使用tmux</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tmux快捷键"><span class="nav-number">1.1.</span> <span class="nav-text">tmux快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tmux进程-会话-操作"><span class="nav-number">1.1.1.</span> <span class="nav-text">tmux进程/会话 操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#窗口操作"><span class="nav-number">1.1.2.</span> <span class="nav-text">窗口操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#窗格操作"><span class="nav-number">1.1.3.</span> <span class="nav-text">窗格操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">1.1.4.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/touxiang.png"
+      alt="ww2000e">
+  <p class="site-author-name" itemprop="name">ww2000e</p>
+  <div class="site-description" itemprop="description">拖延症患者自救工具</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://twitter.com/ww2000e" title="Twitter &rarr; https://twitter.com/ww2000e" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://gitee.com/ww2000e/ww2000e" title="码云 &rarr; https://gitee.com/ww2000e/ww2000e" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>码云</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ww2000e</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">69k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:02</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'b7a13be5b14a5e68a713',
+      clientSecret: 'b2ac15e746a5a65fb7b05057b21c7df0d550b8c2',
+      repo: 'ww2000e',
+      owner: 'ww2000e',
+      admin: ['ww2000e'],
+      id: '93e9beacfc3f49b2033ee0be0e48b6e7',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
